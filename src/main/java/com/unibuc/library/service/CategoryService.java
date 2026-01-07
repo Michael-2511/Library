@@ -1,21 +1,36 @@
 package com.unibuc.library.service;
 
+import com.unibuc.library.exception.DuplicateResourceException;
+import com.unibuc.library.exception.ResourceNotFoundException;
+import com.unibuc.library.model.Book;
 import com.unibuc.library.model.Category;
+import com.unibuc.library.repository.BookRepository;
 import com.unibuc.library.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoryService {
 
     private final CategoryRepository categoryRepository;
+    private final BookRepository bookRepository;
 
-    public CategoryService(CategoryRepository categoryRepository) {
+    public CategoryService(CategoryRepository categoryRepository, BookRepository bookRepository) {
         this.categoryRepository = categoryRepository;
+        this.bookRepository = bookRepository;
     }
 
     public Category createCategory(Category category) {
+
+        categoryRepository.findByName(category.getName())
+                .ifPresent(existingCategory -> {
+                    throw new DuplicateResourceException(
+                            "Category with name '" + category.getName() + "' already exists"
+                    );
+                });
+
         return categoryRepository.save(category);
     }
 
@@ -25,6 +40,21 @@ public class CategoryService {
 
     public Category getCategoryById(Long id) {
         return categoryRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Category not found with id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Category not found with id: " + id
+                ));
+    }
+
+    public List<Book> getBooksByCategoryName(String categoryName) {
+        if (categoryName == null || categoryName.trim().isEmpty()) {
+            throw new RuntimeException("Category name search term cannot be empty");
+        }
+
+        String searchTerm = categoryName.toLowerCase().trim();
+
+        return bookRepository.findAll().stream()
+                .filter(book -> book.getCategory() != null &&
+                        book.getCategory().getName().toLowerCase().contains(searchTerm))
+                .collect(Collectors.toList());
     }
 }

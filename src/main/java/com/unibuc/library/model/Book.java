@@ -30,14 +30,6 @@ public class Book {
     @JoinColumn(name = "category_id")
     private Category category;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "book_authors",
-//            joinColumns = @JoinColumn(name = "book_id"),
-//            inverseJoinColumns = @JoinColumn(name = "author_id")
-//    )
-//    private Set<Author> authors;
-
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
@@ -70,10 +62,6 @@ public class Book {
         return category;
     }
 
-//    public Set<Author> getAuthors() {
-//        return authors;
-//    }
-
     public Author getAuthor() {
         return author;
     }
@@ -102,9 +90,6 @@ public class Book {
         this.category = category;
     }
 
-//    public void setAuthors(Set<Author> authors) {
-//        this.authors = authors;
-//    }
     public void setAuthor(Author author) {
         this.author = author;
     }
