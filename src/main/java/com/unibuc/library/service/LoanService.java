@@ -36,10 +36,6 @@ public class LoanService {
             throw new RuntimeException("No available copies for this book");
         }
 
-//        long activeLoans = loanRepository.findByReturnDateIsNull().stream()
-//                .filter(loan -> loan.getUser().getId() == userId)
-//                .count();
-
         long activeLoans = loanRepository.countByUserIdAndReturnDateIsNull(userId);
 
         if (activeLoans >= user.getMaxBorrowLimit()) {

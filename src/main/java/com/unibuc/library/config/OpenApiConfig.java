@@ -11,14 +11,7 @@ import org.springframework.context.annotation.Configuration;
         info = @Info(
                 title = "Library Management API",
                 version = "1.0",
-                description = "REST API for managing books, authors and users in a library system.",
-                contact = @Contact(
-                        name = "Mihai",
-                        email = "mihai.raican@s.unibuc.ro"
-                ),
-                license = @License(
-                        name = "Academic Use"
-                )
+                description = "REST API for managing books, authors and users in a library system."
         )
 )
 public class OpenApiConfig {

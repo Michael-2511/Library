@@ -17,8 +17,8 @@ public class Author {
     @NotBlank
     private String name;
 
-    @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+//    @ManyToMany(mappedBy = "authors")
+//    private Set<Book> books;
 
     public Author() {
     }
@@ -36,9 +36,9 @@ public class Author {
         return name;
     }
 
-    public Set<Book> getBooks() {
-        return books;
-    }
+//    public Set<Book> getBooks() {
+//        return books;
+//    }
 
     public void setId(Long id) {
         this.id = id;
@@ -48,7 +48,7 @@ public class Author {
         this.name = name;
     }
 
-    public void setBooks(Set<Book> books) {
-        this.books = books;
-    }
+//    public void setBooks(Set<Book> books) {
+//        this.books = books;
+//    }
 }
