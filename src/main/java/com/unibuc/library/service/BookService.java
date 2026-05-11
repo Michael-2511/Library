@@ -57,8 +57,9 @@ public class BookService {
                 .filter(book -> title == null ||
                         (book.getTitle().toLowerCase().contains(title.toLowerCase())))
                 .filter(book -> author == null ||
-                        (book.getAuthor() != null &&
-                                book.getAuthor().getName().toLowerCase().contains(author.toLowerCase())))
+                        (book.getAuthors() != null &&
+                                book.getAuthors().stream()
+                                        .anyMatch(a -> a.getName().toLowerCase().contains(author.toLowerCase()))))
                 .filter(book -> category == null ||
                         (book.getCategory() != null &&
                                 book.getCategory().getName().toLowerCase().contains(category.toLowerCase())))

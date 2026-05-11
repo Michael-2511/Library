@@ -12,8 +12,10 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -48,7 +50,11 @@ class BookServiceTest {
         book.setIsbn("9780553573404");
         book.setTotalCopies(10);
         book.setAvailableCopies(10);
-        book.setAuthor(author);
+        
+        Set<Author> authors = new HashSet<>();
+        authors.add(author);
+        book.setAuthors(authors);
+        
         book.setCategory(category);
     }
 
@@ -187,7 +193,11 @@ class BookServiceTest {
         Book book2 = new Book();
         book2.setId(2L);
         book2.setTitle("Catching Fire");
-        book2.setAuthor(author);
+        
+        Set<Author> authors2 = new HashSet<>();
+        authors2.add(author);
+        book2.setAuthors(authors2);
+        
         book2.setCategory(category);
 
         List<Book> allBooks = Arrays.asList(book, book2);
@@ -209,7 +219,11 @@ class BookServiceTest {
         Book book2 = new Book();
         book2.setId(2L);
         book2.setTitle("The Hunger Games");
-        book2.setAuthor(author);
+        
+        Set<Author> authors2 = new HashSet<>();
+        authors2.add(author);
+        book2.setAuthors(authors2);
+        
         book2.setCategory(category);
 
         List<Book> allBooks = Arrays.asList(book, book2);

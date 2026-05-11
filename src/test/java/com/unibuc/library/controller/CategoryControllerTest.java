@@ -14,7 +14,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -47,7 +49,10 @@ class CategoryControllerTest {
         book.setTitle("The Lord of the Rings");
         book.setIsbn("1234567890");
         book.setCategory(category);
-        book.setAuthor(author);
+        
+        Set<Author> authors = new HashSet<>();
+        authors.add(author);
+        book.setAuthors(authors);
     }
 
     @Test

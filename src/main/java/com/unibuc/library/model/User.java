@@ -27,6 +27,10 @@ public class User {
     @Min(1)
     private int maxBorrowLimit;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "profile_id", unique = true)
+    private UserProfile profile;
+
     // constructors
     public User() {
     }
@@ -83,8 +87,16 @@ public class User {
         return maxBorrowLimit;
     }
 
+    public UserProfile getProfile() {
+        return profile;
+    }
+
     public void setMaxBorrowLimit(int maxBorrowLimit) {
         this.maxBorrowLimit = maxBorrowLimit;
+    }
+
+    public void setProfile(UserProfile profile) {
+        this.profile = profile;
     }
 
     @Override
