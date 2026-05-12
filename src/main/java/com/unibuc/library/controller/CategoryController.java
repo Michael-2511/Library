@@ -79,6 +79,35 @@ public class CategoryController {
     }
 
     @Operation(
+            summary = "Update a category",
+            description = "Updates an existing category by ID. Requires category name."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Category updated successfully"),
+            @ApiResponse(responseCode = "404", description = "Category not found with the provided ID"),
+            @ApiResponse(responseCode = "409", description = "Category with this name already exists")
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<Category> updateCategory(@PathVariable Long id, @Valid @RequestBody Category category) {
+        return ResponseEntity.ok(categoryService.updateCategory(id, category));
+    }
+
+    @Operation(
+            summary = "Delete a category",
+            description = "Deletes a category by ID if it is not linked to any books."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Category deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Category not found with the provided ID"),
+            @ApiResponse(responseCode = "409", description = "Category cannot be deleted because it is in use")
+    })
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCategory(@PathVariable Long id) {
+        categoryService.deleteCategory(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @Operation(
             summary = "Search books by category name",
             description = "Search for books by category name (partial match). Returns all books that belong to categories matching the search term."
     )

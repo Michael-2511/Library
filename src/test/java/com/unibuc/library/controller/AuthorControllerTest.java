@@ -2,6 +2,7 @@ package com.unibuc.library.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.unibuc.library.exception.DuplicateResourceException;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Author;
 import com.unibuc.library.service.AuthorService;
@@ -22,6 +23,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;

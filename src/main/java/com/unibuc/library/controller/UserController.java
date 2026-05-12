@@ -75,4 +75,33 @@ public class UserController {
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
         return ResponseEntity.ok(userService.getUserById(id));
     }
+
+    @Operation(
+            summary = "Update a user",
+            description = "Updates an existing user account by ID. Can modify name, email, role, borrow limit, and profile."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "User updated successfully"),
+            @ApiResponse(responseCode = "404", description = "User not found with the provided ID"),
+            @ApiResponse(responseCode = "409", description = "User with this email already exists")
+    })
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @Valid @RequestBody User user) {
+        return ResponseEntity.ok(userService.updateUser(id, user));
+    }
+
+    @Operation(
+            summary = "Delete a user",
+            description = "Deletes a user by ID if the user has no loans or reservations."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "User deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "User not found with the provided ID"),
+            @ApiResponse(responseCode = "409", description = "User cannot be deleted because it has related records")
+    })
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
 }

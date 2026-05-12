@@ -1,6 +1,7 @@
 package com.unibuc.library.service;
 
 import com.unibuc.library.exception.DuplicateResourceException;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Book;
 import com.unibuc.library.model.Category;
@@ -126,6 +127,79 @@ class CategoryServiceTest {
 
         assertEquals("Category not found with id: 999", exception.getMessage());
         verify(categoryRepository).findById(999L);
+    }
+
+    @Test
+    void updateCategory_Success() {
+        // Arrange
+        Category updated = new Category();
+        updated.setName("Epic Fantasy");
+
+        when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
+        when(categoryRepository.findByName(updated.getName())).thenReturn(Optional.empty());
+        when(categoryRepository.save(any(Category.class))).thenReturn(category);
+
+        // Act
+        Category result = categoryService.updateCategory(1L, updated);
+
+        // Assert
+        assertNotNull(result);
+        assertEquals("Epic Fantasy", result.getName());
+        verify(categoryRepository).findById(1L);
+        verify(categoryRepository).save(category);
+    }
+
+    @Test
+    void updateCategory_DuplicateName_ThrowsException() {
+        // Arrange
+        Category duplicate = new Category();
+        duplicate.setName("Mystery");
+
+        Category otherCategory = new Category();
+        otherCategory.setId(2L);
+        otherCategory.setName("Mystery");
+
+        when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
+        when(categoryRepository.findByName(duplicate.getName())).thenReturn(Optional.of(otherCategory));
+
+        // Act & Assert
+        DuplicateResourceException exception = assertThrows(DuplicateResourceException.class,
+                () -> categoryService.updateCategory(1L, duplicate));
+
+        assertEquals("Category with name 'Mystery' already exists", exception.getMessage());
+        verify(categoryRepository, never()).save(any(Category.class));
+    }
+
+    @Test
+    void deleteCategory_Success() {
+        // Arrange
+        when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
+        when(bookRepository.findAll()).thenReturn(Arrays.asList());
+
+        // Act
+        categoryService.deleteCategory(1L);
+
+        // Assert
+        verify(categoryRepository).findById(1L);
+        verify(categoryRepository).delete(category);
+    }
+
+    @Test
+    void deleteCategory_InUse_ThrowsException() {
+        // Arrange
+        Book bookInCategory = new Book();
+        bookInCategory.setId(2L);
+        bookInCategory.setCategory(category);
+
+        when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
+        when(bookRepository.findAll()).thenReturn(Arrays.asList(bookInCategory));
+
+        // Act & Assert
+        ResourceInUseException exception = assertThrows(ResourceInUseException.class,
+                () -> categoryService.deleteCategory(1L));
+
+        assertEquals("Category cannot be deleted because it is associated with one or more books", exception.getMessage());
+        verify(categoryRepository, never()).delete(any(Category.class));
     }
 
     @Test

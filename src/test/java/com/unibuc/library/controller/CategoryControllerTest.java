@@ -3,6 +3,7 @@ package com.unibuc.library.controller;
 import com.unibuc.library.model.Author;
 import com.unibuc.library.model.Book;
 import com.unibuc.library.model.Category;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.service.CategoryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -231,6 +232,50 @@ class CategoryControllerTest {
         assertNotNull(response.getBody());
         assertEquals(1, response.getBody().size());
         verify(categoryService).getBooksByCategoryName("FANTASY");
+    }
+
+    @Test
+    void updateCategory_Success() {
+        // Arrange
+        Category updatedCategory = new Category();
+        updatedCategory.setId(1L);
+        updatedCategory.setName("Epic Fantasy");
+        when(categoryService.updateCategory(1L, updatedCategory)).thenReturn(updatedCategory);
+
+        // Act
+        ResponseEntity<Category> response = categoryController.updateCategory(1L, updatedCategory);
+
+        // Assert
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("Epic Fantasy", response.getBody().getName());
+        verify(categoryService).updateCategory(1L, updatedCategory);
+    }
+
+    @Test
+    void deleteCategory_Success() {
+        // Arrange
+        doNothing().when(categoryService).deleteCategory(1L);
+
+        // Act
+        ResponseEntity<Void> response = categoryController.deleteCategory(1L);
+
+        // Assert
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        verify(categoryService).deleteCategory(1L);
+    }
+
+    @Test
+    void deleteCategory_InUse_ThrowsException() {
+        // Arrange
+        doThrow(new ResourceInUseException("Category cannot be deleted because it is associated with one or more books"))
+                .when(categoryService).deleteCategory(1L);
+
+        // Act & Assert
+        ResourceInUseException exception = assertThrows(ResourceInUseException.class,
+                () -> categoryController.deleteCategory(1L));
+
+        assertEquals("Category cannot be deleted because it is associated with one or more books", exception.getMessage());
+        verify(categoryService).deleteCategory(1L);
     }
 
     @Test

@@ -2,6 +2,7 @@ package com.unibuc.library.controller;
 
 import com.unibuc.library.model.User;
 import com.unibuc.library.model.UserRole;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -227,5 +228,53 @@ class UserControllerTest {
                 .filter(u -> u.getRole() == UserRole.LIBRARIAN)
                 .count());
         verify(userService).getAllUsers();
+    }
+
+    @Test
+    void updateUser_Success() {
+        // Arrange
+        User updatedUser = new User();
+        updatedUser.setId(1L);
+        updatedUser.setName("John Updated");
+        updatedUser.setEmail("john.updated@example.com");
+        updatedUser.setRole(UserRole.LIBRARIAN);
+        updatedUser.setMaxBorrowLimit(7);
+
+        when(userService.updateUser(1L, updatedUser)).thenReturn(updatedUser);
+
+        // Act
+        ResponseEntity<User> response = userController.updateUser(1L, updatedUser);
+
+        // Assert
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("John Updated", response.getBody().getName());
+        verify(userService).updateUser(1L, updatedUser);
+    }
+
+    @Test
+    void deleteUser_Success() {
+        // Arrange
+        doNothing().when(userService).deleteUser(1L);
+
+        // Act
+        ResponseEntity<Void> response = userController.deleteUser(1L);
+
+        // Assert
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        verify(userService).deleteUser(1L);
+    }
+
+    @Test
+    void deleteUser_InUse_ThrowsException() {
+        // Arrange
+        doThrow(new ResourceInUseException("User cannot be deleted because it has loan history"))
+                .when(userService).deleteUser(1L);
+
+        // Act & Assert
+        ResourceInUseException exception = assertThrows(ResourceInUseException.class,
+                () -> userController.deleteUser(1L));
+
+        assertEquals("User cannot be deleted because it has loan history", exception.getMessage());
+        verify(userService).deleteUser(1L);
     }
 }

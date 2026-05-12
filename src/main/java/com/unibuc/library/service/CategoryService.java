@@ -1,6 +1,7 @@
 package com.unibuc.library.service;
 
 import com.unibuc.library.exception.DuplicateResourceException;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Book;
 import com.unibuc.library.model.Category;
@@ -43,6 +44,37 @@ public class CategoryService {
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Category not found with id: " + id
                 ));
+    }
+
+    public Category updateCategory(Long id, Category category) {
+        Category existingCategory = getCategoryById(id);
+
+        categoryRepository.findByName(category.getName())
+                .ifPresent(foundCategory -> {
+                    if (!foundCategory.getId().equals(id)) {
+                        throw new DuplicateResourceException(
+                                "Category with name '" + category.getName() + "' already exists"
+                        );
+                    }
+                });
+
+        existingCategory.setName(category.getName());
+        return categoryRepository.save(existingCategory);
+    }
+
+    public void deleteCategory(Long id) {
+        Category existingCategory = getCategoryById(id);
+
+        boolean categoryInUse = bookRepository.findAll().stream()
+                .anyMatch(book -> book.getCategory() != null && book.getCategory().getId().equals(id));
+
+        if (categoryInUse) {
+            throw new ResourceInUseException(
+                    "Category cannot be deleted because it is associated with one or more books"
+            );
+        }
+
+        categoryRepository.delete(existingCategory);
     }
 
     public List<Book> getBooksByCategoryName(String categoryName) {
