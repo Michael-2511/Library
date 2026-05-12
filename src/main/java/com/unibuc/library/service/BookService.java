@@ -31,11 +31,11 @@ public class BookService {
     }
 
     public List<Book> getAllBooks() {
-        return bookRepository.findAll();
+        return bookRepository.findAllWithAuthorsAndCategory();
     }
 
     public Book getBookById(Long id) {
-        return bookRepository.findById(id)
+        return bookRepository.findByIdWithAuthorsAndCategory(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Book not found with id: " + id
                 ));
@@ -47,13 +47,13 @@ public class BookService {
     }
 
     public List<Book> searchBooksByTitle(String keyword) {
-        return bookRepository.findAll().stream()
+        return bookRepository.findAllWithAuthorsAndCategory().stream()
                 .filter(book -> book.getTitle().toLowerCase().contains(keyword.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public List<Book> searchBooks(String title, String author, String category) {
-        return bookRepository.findAll().stream()
+        return bookRepository.findAllWithAuthorsAndCategory().stream()
                 .filter(book -> title == null ||
                         (book.getTitle().toLowerCase().contains(title.toLowerCase())))
                 .filter(book -> author == null ||
