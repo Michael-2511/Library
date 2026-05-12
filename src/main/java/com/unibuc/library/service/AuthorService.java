@@ -34,11 +34,11 @@ public class AuthorService {
     }
 
     public List<Author> getAllAuthors() {
-        return authorRepository.findAll();
+        return authorRepository.findAllWithBooks();
     }
 
     public Author getAuthorById(Long id) {
-        return authorRepository.findById(id)
+        return authorRepository.findByIdWithBooks(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Author not found with id: " + id
                 ));
@@ -63,7 +63,7 @@ public class AuthorService {
     public void deleteAuthor(Long id) {
         Author existingAuthor = getAuthorById(id);
 
-        boolean authorIsUsed = bookRepository.findAll().stream()
+        boolean authorIsUsed = bookRepository.findAllWithAuthorsAndCategory().stream()
                 .filter(book -> book.getAuthors() != null)
                 .flatMap(book -> book.getAuthors().stream())
                 .anyMatch(author -> author.getId().equals(id));
