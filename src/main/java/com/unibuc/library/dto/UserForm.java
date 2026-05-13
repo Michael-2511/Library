@@ -27,6 +27,10 @@ public class UserForm {
     // Optional profile fields
     private String phoneNumber;
     private String address;
+    
+    // Optional password field (when creating or updating password)
+    @Size(min = 6, message = "Password must be at least 6 characters")
+    private String password;
 
     // ── Getters & Setters ──────────────────────────────────────────────────
 
@@ -50,4 +54,7 @@ public class UserForm {
 
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }

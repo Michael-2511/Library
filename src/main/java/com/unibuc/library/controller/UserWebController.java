@@ -167,6 +167,7 @@ public class UserWebController {
         user.setEmail(form.getEmail());
         user.setRole(form.getRole());
         user.setMaxBorrowLimit(form.getMaxBorrowLimit());
+        user.setPassword(form.getPassword());
 
         if ((form.getPhoneNumber() != null && !form.getPhoneNumber().isBlank())
                 || (form.getAddress() != null && !form.getAddress().isBlank())) {

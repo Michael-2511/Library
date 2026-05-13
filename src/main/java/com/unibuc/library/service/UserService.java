@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,13 +25,16 @@ public class UserService {
     private final UserRepository userRepository;
     private final LoanRepository loanRepository;
     private final ReservationRepository reservationRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository,
                        LoanRepository loanRepository,
-                       ReservationRepository reservationRepository) {
+                       ReservationRepository reservationRepository,
+                       PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.loanRepository = loanRepository;
         this.reservationRepository = reservationRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     public User createUser(User user) {
@@ -42,6 +46,15 @@ public class UserService {
                             "User with email '" + user.getEmail() + "' already exists"
                     );
                 });
+
+        // encode password before saving
+        if (user.getPassword() != null && !user.getPassword().isBlank()) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+        }
+
+        if (user.getProfile() != null) {
+            user.getProfile().setUser(user);
+        }
 
         return userRepository.save(user);
     }
@@ -82,6 +95,11 @@ public class UserService {
         existingUser.setRole(user.getRole());
         existingUser.setMaxBorrowLimit(user.getMaxBorrowLimit());
         existingUser.setProfile(user.getProfile());
+
+        // Update password only if provided (and encode it)
+        if (user.getPassword() != null && !user.getPassword().isBlank()) {
+            existingUser.setPassword(passwordEncoder.encode(user.getPassword()));
+        }
 
         UserProfile profile = existingUser.getProfile();
         if (profile != null) {

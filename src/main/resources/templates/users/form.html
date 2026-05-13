@@ -50,6 +50,13 @@
                        placeholder="e.g. john@example.com" maxlength="255" required/>
                 <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
               </div>
+              <div class="col-12">
+                <label for="password" class="form-label fw-semibold">Password <span class="text-muted small">(leave empty to keep current)</span></label>
+                <input type="password" id="password" th:field="*{password}"
+                       class="form-control" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid' : ''"
+                       placeholder="At least 6 characters" maxlength="255"/>
+                <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+              </div>
               <div class="col-md-6">
                 <label for="role" class="form-label fw-semibold">Role <span class="required-star">*</span></label>
                 <select id="role" th:field="*{role}"
