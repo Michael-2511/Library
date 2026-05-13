@@ -79,20 +79,11 @@ public class UserService {
     public void deleteUser(Long id) {
         User existingUser = getUserById(id);
 
-        boolean hasLoans = loanRepository.findAll().stream()
-                .anyMatch(loan -> loan.getUser() != null && loan.getUser().getId() == id);
-        if (hasLoans) {
-            throw new ResourceInUseException(
-                    "User cannot be deleted because it has loan history"
-            );
+        if (loanRepository.existsByUserId(id)) {
+            throw new ResourceInUseException("User cannot be deleted because it has loan history");
         }
-
-        boolean hasReservations = reservationRepository.findAll().stream()
-                .anyMatch(reservation -> reservation.getUser() != null && reservation.getUser().getId() == id);
-        if (hasReservations) {
-            throw new ResourceInUseException(
-                    "User cannot be deleted because it has reservations"
-            );
+        if (reservationRepository.existsByUserId(id)) {
+            throw new ResourceInUseException("User cannot be deleted because it has reservations");
         }
 
         userRepository.delete(existingUser);

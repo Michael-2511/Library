@@ -2,6 +2,7 @@ package com.unibuc.library.controller;
 
 import com.unibuc.library.dto.BookForm;
 import com.unibuc.library.exception.DuplicateResourceException;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Author;
 import com.unibuc.library.model.Book;
@@ -174,8 +175,12 @@ public class BookWebController {
 
     @PostMapping("/{id}/delete")
     public String deleteBook(@PathVariable Long id, RedirectAttributes redirectAttributes) {
-        bookService.deleteBook(id);
-        redirectAttributes.addFlashAttribute("successMessage", "Book deleted successfully.");
+        try {
+            bookService.deleteBook(id);
+            redirectAttributes.addFlashAttribute("successMessage", "Book deleted successfully.");
+        } catch (ResourceInUseException e) {
+            redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
+        }
         return "redirect:/books";
     }
 
