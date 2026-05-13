@@ -8,6 +8,8 @@ import com.unibuc.library.model.UserProfile;
 import com.unibuc.library.repository.LoanRepository;
 import com.unibuc.library.repository.ReservationRepository;
 import com.unibuc.library.repository.UserRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -55,6 +57,11 @@ public class UserService {
     public List<User> getAllUsers() {
         log.debug("Fetching all users");
         return userRepository.findAll();
+    }
+
+    public Page<User> getUsersPage(Pageable pageable) {
+        log.debug("Fetching users page {} with size {}", pageable.getPageNumber(), pageable.getPageSize());
+        return userRepository.findAll(pageable);
     }
 
     public User updateUser(Long id, User user) {

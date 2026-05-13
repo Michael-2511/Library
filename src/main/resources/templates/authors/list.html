@@ -41,7 +41,7 @@
       <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
           <h4 class="mb-0 fw-semibold"><i class="bi bi-person me-2 text-primary"></i>Authors</h4>
-          <small class="text-muted" th:text="${authors.size()} + ' author(s) found'"></small>
+          <small class="text-muted" th:text="${authorsPage.totalElements} + ' author(s) found'"></small>
         </div>
         <a th:href="@{/authors/new}" class="btn btn-primary btn-sm">
           <i class="bi bi-plus-lg me-1"></i>Add Author
@@ -57,9 +57,24 @@
               <input type="text" name="name" class="form-control form-control-sm"
                      placeholder="Search by name…" th:value="${searchName}" maxlength="200"/>
             </div>
-            <div class="col-md-3 d-flex gap-2">
+            <div class="col-md-3">
+              <label class="form-label small fw-semibold">Sort by</label>
+              <select name="sort" class="form-select form-select-sm">
+                <option value="name" th:selected="${sort == 'name'}">Name</option>
+                <option value="id" th:selected="${sort == 'id'}">ID</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label small fw-semibold">Direction</label>
+              <select name="dir" class="form-select form-select-sm">
+                <option value="asc" th:selected="${dir == 'asc'}">Ascending</option>
+                <option value="desc" th:selected="${dir == 'desc'}">Descending</option>
+              </select>
+            </div>
+            <input type="hidden" name="page" value="0"/>
+            <div class="col-md-1 d-flex gap-2">
               <button type="submit" class="btn btn-outline-primary btn-sm flex-fill">
-                <i class="bi bi-search me-1"></i>Search
+                <i class="bi bi-search me-1"></i>Apply
               </button>
               <a th:href="@{/authors}" class="btn btn-outline-secondary btn-sm flex-fill" th:if="${searching}">
                 <i class="bi bi-x-lg"></i>
@@ -123,6 +138,20 @@
           </div>
         </div>
       </div>
+
+      <nav th:if="${!searching and totalPages > 1}" class="mt-4" aria-label="Author pages">
+        <ul class="pagination justify-content-center mb-0">
+          <li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
+            <a class="page-link" th:href="@{/authors(page=${currentPage - 1}, sort=${sort}, dir=${dir})}">Previous</a>
+          </li>
+          <li class="page-item" th:each="i : ${#numbers.sequence(0, totalPages - 1)}" th:classappend="${i == currentPage} ? 'active'">
+            <a class="page-link" th:text="${i + 1}" th:href="@{/authors(page=${i}, sort=${sort}, dir=${dir})}"></a>
+          </li>
+          <li class="page-item" th:classappend="${currentPage + 1 >= totalPages} ? 'disabled'">
+            <a class="page-link" th:href="@{/authors(page=${currentPage + 1}, sort=${sort}, dir=${dir})}">Next</a>
+          </li>
+        </ul>
+      </nav>
 
     </main>
   </div>

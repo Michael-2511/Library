@@ -8,6 +8,12 @@ import com.unibuc.library.model.UserProfile;
 import com.unibuc.library.model.UserRole;
 import com.unibuc.library.service.UserService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,35 +27,58 @@ import java.util.List;
 public class UserWebController {
 
     private final UserService userService;
+    private final int pageSize;
 
-    public UserWebController(UserService userService) {
+    public UserWebController(UserService userService,
+                             @Value("${library.pagination.page-size:5}") int pageSize) {
         this.userService = userService;
+        this.pageSize = pageSize;
     }
 
     @GetMapping
     public String listUsers(@RequestParam(required = false) String name,
                             @RequestParam(required = false) String role,
+                            @RequestParam(defaultValue = "0") int page,
+                            @RequestParam(defaultValue = "name") String sort,
+                            @RequestParam(defaultValue = "asc") String dir,
                             Model model) {
-        List<User> users = userService.getAllUsers();
         boolean searching = (name != null && !name.isBlank()) || (role != null && !role.isBlank());
+        Page<User> usersPage;
 
-        if (name != null && !name.isBlank()) {
-            users = users.stream()
+        if (searching) {
+            List<User> users = userService.getAllUsers();
+            if (name != null && !name.isBlank()) {
+                users = users.stream()
                     .filter(u -> u.getName().toLowerCase().contains(name.toLowerCase()))
                     .toList();
-        }
-        if (role != null && !role.isBlank()) {
-            try {
-                UserRole r = UserRole.valueOf(role.toUpperCase());
-                users = users.stream().filter(u -> u.getRole() == r).toList();
-            } catch (IllegalArgumentException ignored) {}
+            }
+            if (role != null && !role.isBlank()) {
+                try {
+                    UserRole r = UserRole.valueOf(role.toUpperCase());
+                    users = users.stream().filter(u -> u.getRole() == r).toList();
+                } catch (IllegalArgumentException ignored) {}
+            }
+            usersPage = new PageImpl<>(users);
+        } else {
+            Pageable pageable = PageRequest.of(
+                    Math.max(page, 0),
+                    pageSize,
+                    Sort.by(resolveDirection(dir), resolveUserSort(sort))
+            );
+            usersPage = userService.getUsersPage(pageable);
         }
 
-        model.addAttribute("users", users);
+        model.addAttribute("usersPage", usersPage);
+        model.addAttribute("users", usersPage.getContent());
         model.addAttribute("roles", UserRole.values());
         model.addAttribute("searchName", name);
         model.addAttribute("searchRole", role);
         model.addAttribute("searching", searching);
+        model.addAttribute("currentPage", usersPage.getNumber());
+        model.addAttribute("totalPages", usersPage.getTotalPages());
+        model.addAttribute("sort", sort);
+        model.addAttribute("dir", dir);
+        model.addAttribute("pageSize", pageSize);
         return "users/list";
     }
 
@@ -161,5 +190,17 @@ public class UserWebController {
             form.setAddress(user.getProfile().getAddress());
         }
         return form;
+    }
+
+    private String resolveUserSort(String sort) {
+        return switch (sort == null ? "" : sort) {
+            case "email" -> "email";
+            case "role" -> "role";
+            default -> "name";
+        };
+    }
+
+    private Sort.Direction resolveDirection(String dir) {
+        return "desc".equalsIgnoreCase(dir) ? Sort.Direction.DESC : Sort.Direction.ASC;
     }
 }
