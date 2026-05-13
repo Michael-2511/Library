@@ -3,12 +3,13 @@
 
 <!-- ── Navbar ── -->
 <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-  <a class="navbar-brand" th:href="@{/books}"><i class="bi bi-book-half me-2"></i>Library</a>
+  <a class="navbar-brand" th:href="@{/dashboard}"><i class="bi bi-book-half me-2"></i>Library</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" th:href="@{/dashboard}"><i class="bi bi-speedometer2 me-1"></i>Dashboard</a></li>
       <li class="nav-item"><a class="nav-link" th:href="@{/books}"><i class="bi bi-book me-1"></i>Books</a></li>
       <li class="nav-item"><a class="nav-link" th:href="@{/authors}"><i class="bi bi-person me-1"></i>Authors</a></li>
       <li class="nav-item"><a class="nav-link" th:href="@{/categories}"><i class="bi bi-tag me-1"></i>Categories</a></li>
@@ -22,6 +23,7 @@
 <!-- ── Sidebar ── -->
 <nav th:fragment="sidebar" class="col-md-2 d-none d-md-block sidebar py-3 px-2">
   <ul class="nav flex-column gap-1">
+    <li class="nav-item"><a class="nav-link" th:href="@{/dashboard}"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
     <li class="nav-item"><a class="nav-link" th:href="@{/books}"><i class="bi bi-book me-2"></i>Books</a></li>
     <li class="nav-item"><a class="nav-link" th:href="@{/authors}"><i class="bi bi-person me-2"></i>Authors</a></li>
     <li class="nav-item"><a class="nav-link" th:href="@{/categories}"><i class="bi bi-tag me-2"></i>Categories</a></li>

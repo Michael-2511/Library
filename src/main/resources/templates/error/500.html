@@ -18,18 +18,18 @@
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark px-3">
-  <a class="navbar-brand fw-bold" th:href="@{/books}"><i class="bi bi-book-half me-2"></i>Library</a>
+  <a class="navbar-brand fw-bold" th:href="@{/dashboard}">
+    <i class="bi bi-book-half me-2"></i>Library
+  </a>
 </nav>
 <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: calc(100vh - 56px);">
   <div class="text-center px-3">
     <div class="error-code">500</div>
     <i class="bi bi-exclamation-triangle error-icon mb-3 d-block"></i>
-    <h2 class="fw-semibold mb-2"
-        th:text="${errorTitle} ?: 'Internal Server Error'"></h2>
-    <p class="text-muted mb-4"
-       th:text="${errorMessage} ?: 'Something went wrong on our end. Please try again later.'"></p>
-    <a th:href="@{/books}" class="btn btn-primary">
-      <i class="bi bi-house me-1"></i>Go to Books
+    <h2 class="fw-semibold mb-2">Internal Server Error</h2>
+    <p class="text-muted mb-4">Something went wrong on our end. Please try again later.</p>
+    <a th:href="@{/dashboard}" class="btn btn-primary">
+      <i class="bi bi-house me-1"></i>Go to Dashboard
     </a>
   </div>
 </div>
