@@ -82,6 +82,14 @@
                 <option value="desc" th:selected="${dir == 'desc'}">Descending</option>
               </select>
             </div>
+            <div class="col-md-2">
+              <label class="form-label small fw-semibold">Page size</label>
+              <select name="pageSize" class="form-select form-select-sm">
+                <option value="5" th:selected="${pageSize == 5}">5</option>
+                <option value="10" th:selected="${pageSize == 10}">10</option>
+                <option value="20" th:selected="${pageSize == 20}">20</option>
+              </select>
+            </div>
             <input type="hidden" name="page" value="0"/>
             <div class="col-md-2 d-flex gap-2">
               <button type="submit" class="btn btn-outline-primary btn-sm flex-fill">
@@ -173,16 +181,16 @@
       <nav th:if="${!searching and totalPages > 1}" class="mt-4" aria-label="Book pages">
         <ul class="pagination justify-content-center mb-0">
           <li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
-            <a class="page-link" th:href="@{/books(page=${currentPage - 1}, sort=${sort}, dir=${dir})}">Previous</a>
+            <a class="page-link" th:href="@{/books(page=${currentPage - 1}, sort=${sort}, dir=${dir}, pageSize=${pageSize})}">Previous</a>
           </li>
           <li class="page-item"
               th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
               th:classappend="${i == currentPage} ? 'active'">
             <a class="page-link" th:text="${i + 1}"
-               th:href="@{/books(page=${i}, sort=${sort}, dir=${dir})}"></a>
+               th:href="@{/books(page=${i}, sort=${sort}, dir=${dir}, pageSize=${pageSize})}"></a>
           </li>
           <li class="page-item" th:classappend="${currentPage + 1 >= totalPages} ? 'disabled'">
-            <a class="page-link" th:href="@{/books(page=${currentPage + 1}, sort=${sort}, dir=${dir})}">Next</a>
+            <a class="page-link" th:href="@{/books(page=${currentPage + 1}, sort=${sort}, dir=${dir}, pageSize=${pageSize})}">Next</a>
           </li>
         </ul>
       </nav>

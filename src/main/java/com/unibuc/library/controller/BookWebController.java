@@ -41,18 +41,18 @@ public class BookWebController {
     private final BookRepository bookRepository;
     private final CategoryRepository categoryRepository;
     private final AuthorRepository authorRepository;
-    private final int pageSize;
+    private final int defaultPageSize;
 
     public BookWebController(BookService bookService,
                              BookRepository bookRepository,
                              CategoryRepository categoryRepository,
                               AuthorRepository authorRepository,
-                              @Value("${library.pagination.page-size:5}") int pageSize) {
+                              @Value("${library.pagination.page-size:5}") int defaultPageSize) {
         this.bookService = bookService;
         this.bookRepository = bookRepository;
         this.categoryRepository = categoryRepository;
         this.authorRepository = authorRepository;
-        this.pageSize = pageSize;
+        this.defaultPageSize = defaultPageSize;
     }
 
     // ── LIST ──────────────────────────────────────────────────────────────
@@ -65,12 +65,13 @@ public class BookWebController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "title") String sort,
             @RequestParam(defaultValue = "asc") String dir,
+            @RequestParam(required = false) Integer pageSize,
             Model model) {
 
         boolean searching = (title != null && !title.isBlank())
                 || (author != null && !author.isBlank())
                 || (category != null && !category.isBlank());
-        Page<Book> booksPage;
+        Page booksPage;
 
         if (searching) {
             List<Book> books = bookService.searchBooks(
@@ -81,7 +82,7 @@ public class BookWebController {
         } else {
             Pageable pageable = PageRequest.of(
                     Math.max(page, 0),
-                    pageSize,
+                    resolvePageSize(pageSize),
                     Sort.by(resolveDirection(dir), resolveBookSort(sort))
             );
             booksPage = bookService.getBooksPage(pageable);
@@ -97,7 +98,7 @@ public class BookWebController {
         model.addAttribute("totalPages", booksPage.getTotalPages());
         model.addAttribute("sort", sort);
         model.addAttribute("dir", dir);
-        model.addAttribute("pageSize", pageSize);
+        model.addAttribute("pageSize", resolvePageSize(pageSize));
         return "books/list";
     }
 
@@ -291,5 +292,15 @@ public class BookWebController {
 
     private Sort.Direction resolveDirection(String dir) {
         return "desc".equalsIgnoreCase(dir) ? Sort.Direction.DESC : Sort.Direction.ASC;
+    }
+
+    private int resolvePageSize(Integer pageSize) {
+        if (pageSize == null) {
+            return defaultPageSize;
+        }
+        if (pageSize == 5 || pageSize == 10 || pageSize == 20) {
+            return pageSize;
+        }
+        return defaultPageSize;
     }
 }
