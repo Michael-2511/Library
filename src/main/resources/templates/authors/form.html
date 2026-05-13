@@ -22,31 +22,10 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-  <a class="navbar-brand" th:href="@{/books}"><i class="bi bi-book-half me-2"></i>Library</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item"><a class="nav-link" th:href="@{/books}"><i class="bi bi-book me-1"></i>Books</a></li>
-      <li class="nav-item"><a class="nav-link active" th:href="@{/authors}"><i class="bi bi-person me-1"></i>Authors</a></li>
-    </ul>
-  </div>
-</nav>
-
+<div th:replace="~{fragments/nav :: navbar}"></div>
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block sidebar py-3 px-2">
-      <ul class="nav flex-column gap-1">
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/books}"><i class="bi bi-book me-2"></i>Books</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" th:href="@{/authors}"><i class="bi bi-person me-2"></i>Authors</a>
-        </li>
-      </ul>
-    </nav>
+    <div th:replace="~{fragments/nav :: sidebar}"></div>
 
     <main class="col-md-10 py-4 px-4">
 

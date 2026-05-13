@@ -76,6 +76,10 @@ public class LoanService {
         return loanRepository.findByReturnDateIsNull();
     }
 
+    public List<Loan> getAllLoans() {
+        return loanRepository.findAll();
+    }
+
     public List<Loan> getActiveLoansByUser(Long userId) {
         userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));

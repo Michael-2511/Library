@@ -57,6 +57,10 @@ public class ReservationService {
         return reservationRepository.save(reservation);
     }
 
+    public List<Reservation> getAllReservations() {
+        return reservationRepository.findAll();
+    }
+
     public List<Reservation> getReservationsForUser(Long userId) {
         userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));

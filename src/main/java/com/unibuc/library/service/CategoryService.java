@@ -65,7 +65,7 @@ public class CategoryService {
     public void deleteCategory(Long id) {
         Category existingCategory = getCategoryById(id);
 
-        boolean categoryInUse = bookRepository.findAll().stream()
+        boolean categoryInUse = bookRepository.findAllWithAuthorsAndCategory().stream()
                 .anyMatch(book -> book.getCategory() != null && book.getCategory().getId().equals(id));
 
         if (categoryInUse) {

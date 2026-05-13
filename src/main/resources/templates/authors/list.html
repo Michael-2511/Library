@@ -13,56 +13,31 @@
   <style>
     body { background-color: #f8f9fa; }
     .navbar-brand { font-weight: 700; }
-    .sidebar { min-height: calc(100vh - 56px); background:#fff; border-right:1px solid #dee2e6; }
-    .sidebar .nav-link { color:#495057; border-radius:.375rem; }
-    .sidebar .nav-link:hover, .sidebar .nav-link.active { background:#e9ecef; color:#0d6efd; }
-    .card { border:none; box-shadow:0 1px 4px rgba(0,0,0,.08); }
-    .table thead th { background:#f1f3f5; font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; }
+    .sidebar { min-height: calc(100vh - 56px); background: #fff; border-right: 1px solid #dee2e6; }
+    .sidebar .nav-link { color: #495057; border-radius: .375rem; }
+    .sidebar .nav-link:hover, .sidebar .nav-link.active { background: #e9ecef; color: #0d6efd; }
+    .card { border: none; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+    .table thead th { background: #f1f3f5; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-  <a class="navbar-brand" th:href="@{/books}"><i class="bi bi-book-half me-2"></i>Library</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto">
-      <li class="nav-item"><a class="nav-link" th:href="@{/books}"><i class="bi bi-book me-1"></i>Books</a></li>
-      <li class="nav-item"><a class="nav-link active" th:href="@{/authors}"><i class="bi bi-person me-1"></i>Authors</a></li>
-    </ul>
-  </div>
-</nav>
-
+<div th:replace="~{fragments/nav :: navbar}"></div>
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block sidebar py-3 px-2">
-      <ul class="nav flex-column gap-1">
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/books}"><i class="bi bi-book me-2"></i>Books</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" th:href="@{/authors}"><i class="bi bi-person me-2"></i>Authors</a>
-        </li>
-      </ul>
-    </nav>
+    <div th:replace="~{fragments/nav :: sidebar}"></div>
 
     <main class="col-md-10 py-4 px-4">
 
-      <!-- Flash messages -->
       <div th:if="${successMessage}" class="alert alert-success alert-dismissible fade show" role="alert">
-        <i class="bi bi-check-circle me-2"></i>
-        <span th:text="${successMessage}"></span>
+        <i class="bi bi-check-circle me-2"></i><span th:text="${successMessage}"></span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
       </div>
       <div th:if="${errorMessage}" class="alert alert-danger alert-dismissible fade show" role="alert">
-        <i class="bi bi-exclamation-triangle me-2"></i>
-        <span th:text="${errorMessage}"></span>
+        <i class="bi bi-exclamation-triangle me-2"></i><span th:text="${errorMessage}"></span>
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
       </div>
 
-      <!-- Header -->
       <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
           <h4 class="mb-0 fw-semibold"><i class="bi bi-person me-2 text-primary"></i>Authors</h4>
@@ -80,16 +55,13 @@
             <div class="col-md-6">
               <label class="form-label small fw-semibold">Name</label>
               <input type="text" name="name" class="form-control form-control-sm"
-                     placeholder="Search by name…"
-                     th:value="${searchName}"
-                     maxlength="200"/>
+                     placeholder="Search by name…" th:value="${searchName}" maxlength="200"/>
             </div>
             <div class="col-md-3 d-flex gap-2">
               <button type="submit" class="btn btn-outline-primary btn-sm flex-fill">
                 <i class="bi bi-search me-1"></i>Search
               </button>
-              <a th:href="@{/authors}" class="btn btn-outline-secondary btn-sm flex-fill"
-                 th:if="${searching}">
+              <a th:href="@{/authors}" class="btn btn-outline-secondary btn-sm flex-fill" th:if="${searching}">
                 <i class="bi bi-x-lg"></i>
               </a>
             </div>
@@ -120,12 +92,10 @@
                   <td class="text-muted small" th:text="${stat.index + 1}"></td>
                   <td>
                     <a th:href="@{/authors/{id}(id=${author.id})}"
-                       class="fw-semibold text-decoration-none"
-                       th:text="${author.name}"></a>
+                       class="fw-semibold text-decoration-none" th:text="${author.name}"></a>
                   </td>
                   <td>
-                    <span th:if="${author.books == null or author.books.isEmpty()}"
-                          class="text-muted">—</span>
+                    <span th:if="${author.books == null or author.books.isEmpty()}" class="text-muted">—</span>
                     <span th:unless="${author.books == null or author.books.isEmpty()}"
                           class="badge rounded-pill text-bg-secondary"
                           th:text="${author.books.size()}"></span>
@@ -139,14 +109,13 @@
                        class="btn btn-sm btn-outline-primary me-1" title="Edit">
                       <i class="bi bi-pencil"></i>
                     </a>
-                    <button type="button"
-                            class="btn btn-sm btn-outline-danger"
-                            title="Delete"
-                            data-bs-toggle="modal"
-                            data-bs-target="#deleteModal"
-                            th:attr="data-author-id=${author.id}, data-author-name=${author.name}">
-                      <i class="bi bi-trash"></i>
-                    </button>
+                    <form th:action="@{/authors/{id}/delete(id=${author.id})}" method="post"
+                          style="display:inline"
+                          onsubmit="return confirm('Delete \'' + /*[[${author.name}]]*/ '' + '\'?')">
+                      <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </form>
                   </td>
                 </tr>
               </tbody>
@@ -159,41 +128,8 @@
   </div>
 </div>
 
-<!-- Delete modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h5 class="modal-title">
-          <i class="bi bi-exclamation-triangle text-danger me-2"></i>Confirm Deletion
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete <strong id="deleteAuthorName"></strong>?
-        This action cannot be undone.
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-        <form id="deleteForm" method="post">
-          <button type="submit" class="btn btn-danger btn-sm">
-            <i class="bi bi-trash me-1"></i>Delete
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmFXFMrWQ8I5/s5tnFkFZQnXkKp"
         crossorigin="anonymous"></script>
-<script>
-  document.getElementById('deleteModal').addEventListener('show.bs.modal', function (e) {
-    const btn = e.relatedTarget;
-    document.getElementById('deleteAuthorName').textContent = btn.getAttribute('data-author-name');
-    document.getElementById('deleteForm').action = '/authors/' + btn.getAttribute('data-author-id') + '/delete';
-  });
-</script>
 </body>
 </html>

@@ -1,9 +1,11 @@
 package com.unibuc.library.service;
 
 import com.unibuc.library.exception.DuplicateResourceException;
+import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Book;
 import com.unibuc.library.repository.BookRepository;
+import com.unibuc.library.repository.LoanRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +15,11 @@ import java.util.stream.Collectors;
 public class BookService {
 
     private final BookRepository bookRepository;
+    private final LoanRepository loanRepository;
 
-    public BookService(BookRepository bookRepository) {
+    public BookService(BookRepository bookRepository, LoanRepository loanRepository) {
         this.bookRepository = bookRepository;
+        this.loanRepository = loanRepository;
     }
 
     public Book createBook(Book book) {
@@ -43,6 +47,11 @@ public class BookService {
 
     public void deleteBook(Long id) {
         Book book = getBookById(id);
+        if (loanRepository.existsByBookId(id)) {
+            throw new ResourceInUseException(
+                "Book \"" + book.getTitle() + "\" cannot be deleted because it has associated loans."
+            );
+        }
         bookRepository.delete(book);
     }
 
