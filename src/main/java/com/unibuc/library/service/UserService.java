@@ -8,12 +8,16 @@ import com.unibuc.library.model.UserProfile;
 import com.unibuc.library.repository.LoanRepository;
 import com.unibuc.library.repository.ReservationRepository;
 import com.unibuc.library.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserService {
+
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
     private final UserRepository userRepository;
     private final LoanRepository loanRepository;
@@ -28,6 +32,7 @@ public class UserService {
     }
 
     public User createUser(User user) {
+        log.info("Creating user '{}' with email '{}'", user.getName(), user.getEmail());
 
         userRepository.findByEmail(user.getEmail())
                 .ifPresent(existingUser -> {
@@ -40,6 +45,7 @@ public class UserService {
     }
 
     public User getUserById(Long id) {
+        log.debug("Fetching user by id {}", id);
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "User not found with id: " + id
@@ -47,10 +53,12 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
+        log.debug("Fetching all users");
         return userRepository.findAll();
     }
 
     public User updateUser(Long id, User user) {
+        log.info("Updating user id {} to name '{}' and email '{}'", id, user.getName(), user.getEmail());
         User existingUser = getUserById(id);
 
         userRepository.findByEmail(user.getEmail())
@@ -80,12 +88,15 @@ public class UserService {
         User existingUser = getUserById(id);
 
         if (loanRepository.existsByUserId(id)) {
+            log.warn("Cannot delete user '{}' (id={}) because it has loan history", existingUser.getName(), id);
             throw new ResourceInUseException("User cannot be deleted because it has loan history");
         }
         if (reservationRepository.existsByUserId(id)) {
+            log.warn("Cannot delete user '{}' (id={}) because it has reservations", existingUser.getName(), id);
             throw new ResourceInUseException("User cannot be deleted because it has reservations");
         }
 
+        log.info("Deleting user '{}' (id={})", existingUser.getName(), id);
         userRepository.delete(existingUser);
     }
 }

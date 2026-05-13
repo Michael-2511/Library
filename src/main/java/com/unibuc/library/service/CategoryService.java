@@ -7,6 +7,8 @@ import com.unibuc.library.model.Book;
 import com.unibuc.library.model.Category;
 import com.unibuc.library.repository.BookRepository;
 import com.unibuc.library.repository.CategoryRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +16,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class CategoryService {
+
+    private static final Logger log = LoggerFactory.getLogger(CategoryService.class);
 
     private final CategoryRepository categoryRepository;
     private final BookRepository bookRepository;
@@ -24,6 +28,7 @@ public class CategoryService {
     }
 
     public Category createCategory(Category category) {
+        log.info("Creating category '{}'", category.getName());
 
         categoryRepository.findByName(category.getName())
                 .ifPresent(existingCategory -> {
@@ -36,10 +41,12 @@ public class CategoryService {
     }
 
     public List<Category> getAllCategories() {
+        log.debug("Fetching all categories");
         return categoryRepository.findAll();
     }
 
     public Category getCategoryById(Long id) {
+        log.debug("Fetching category by id {}", id);
         return categoryRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Category not found with id: " + id
@@ -47,6 +54,7 @@ public class CategoryService {
     }
 
     public Category updateCategory(Long id, Category category) {
+        log.info("Updating category id {} to name '{}'", id, category.getName());
         Category existingCategory = getCategoryById(id);
 
         categoryRepository.findByName(category.getName())
@@ -69,11 +77,13 @@ public class CategoryService {
                 .anyMatch(book -> book.getCategory() != null && book.getCategory().getId().equals(id));
 
         if (categoryInUse) {
+            log.warn("Cannot delete category '{}' (id={}) because it is associated with books", existingCategory.getName(), id);
             throw new ResourceInUseException(
                     "Category cannot be deleted because it is associated with one or more books"
             );
         }
 
+        log.info("Deleting category '{}' (id={})", existingCategory.getName(), id);
         categoryRepository.delete(existingCategory);
     }
 
