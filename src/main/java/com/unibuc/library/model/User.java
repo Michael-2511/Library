@@ -21,6 +21,9 @@ public class User {
     @Column(unique = true)
     private String email;
 
+    @NotBlank(message = "Password is required")
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
@@ -30,6 +33,9 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_id", unique = true)
     private UserProfile profile;
+
+    @Column(columnDefinition = "boolean default true")
+    private boolean enabled = true;
 
     // constructors
     public User() {
@@ -48,6 +54,22 @@ public class User {
         this.email = email;
         this.role = role;
         this.maxBorrowLimit = maxBorrowLimit;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     // getters & setters

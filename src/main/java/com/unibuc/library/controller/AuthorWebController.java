@@ -24,12 +24,12 @@ import java.util.List;
 public class AuthorWebController {
 
     private final AuthorService authorService;
-    private final int pageSize;
+    private final int defaultPageSize;
 
     public AuthorWebController(AuthorService authorService,
-                               @Value("${library.pagination.page-size:5}") int pageSize) {
+                               @Value("${library.pagination.page-size:5}") int defaultPageSize) {
         this.authorService = authorService;
-        this.pageSize = pageSize;
+        this.defaultPageSize = defaultPageSize;
     }
 
     // ── LIST ──────────────────────────────────────────────────────────────
@@ -39,9 +39,10 @@ public class AuthorWebController {
                               @RequestParam(defaultValue = "0") int page,
                               @RequestParam(defaultValue = "name") String sort,
                               @RequestParam(defaultValue = "asc") String dir,
+                              @RequestParam(required = false) Integer pageSize,
                               Model model) {
         boolean searching = name != null && !name.isBlank();
-        Page<Author> authorsPage;
+        Page authorsPage;
 
         if (searching) {
             List<Author> authors = authorService.getAllAuthors().stream()
@@ -51,7 +52,7 @@ public class AuthorWebController {
         } else {
             Pageable pageable = PageRequest.of(
                     Math.max(page, 0),
-                    pageSize,
+                    resolvePageSize(pageSize),
                     Sort.by(resolveDirection(dir), resolveAuthorSort(sort))
             );
             authorsPage = authorService.getAuthorsPage(pageable);
@@ -65,7 +66,7 @@ public class AuthorWebController {
         model.addAttribute("totalPages", authorsPage.getTotalPages());
         model.addAttribute("sort", sort);
         model.addAttribute("dir", dir);
-        model.addAttribute("pageSize", pageSize);
+        model.addAttribute("pageSize", resolvePageSize(pageSize));
         return "authors/list";
     }
 
@@ -150,13 +151,23 @@ public class AuthorWebController {
     }
 
     private String resolveAuthorSort(String sort) {
-        return switch (sort == null ? "" : sort) {
-            case "id" -> "id";
-            default -> "name";
-        };
+        if ("id".equalsIgnoreCase(sort)) {
+            return "id";
+        }
+        return "name";
     }
 
     private Sort.Direction resolveDirection(String dir) {
         return "desc".equalsIgnoreCase(dir) ? Sort.Direction.DESC : Sort.Direction.ASC;
+    }
+
+    private int resolvePageSize(Integer pageSize) {
+        if (pageSize == null) {
+            return defaultPageSize;
+        }
+        if (pageSize == 5 || pageSize == 10 || pageSize == 20) {
+            return pageSize;
+        }
+        return defaultPageSize;
     }
 }
