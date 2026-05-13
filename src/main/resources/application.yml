@@ -3,3 +3,8 @@ spring:
     name: library
   profiles:
     active: dev
+
+library:
+  pagination:
+    page-size: 5
+

@@ -11,7 +11,13 @@ import com.unibuc.library.repository.AuthorRepository;
 import com.unibuc.library.repository.BookRepository;
 import com.unibuc.library.repository.CategoryRepository;
 import com.unibuc.library.service.BookService;
+import org.springframework.beans.factory.annotation.Value;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -35,15 +41,18 @@ public class BookWebController {
     private final BookRepository bookRepository;
     private final CategoryRepository categoryRepository;
     private final AuthorRepository authorRepository;
+    private final int pageSize;
 
     public BookWebController(BookService bookService,
                              BookRepository bookRepository,
                              CategoryRepository categoryRepository,
-                             AuthorRepository authorRepository) {
+                              AuthorRepository authorRepository,
+                              @Value("${library.pagination.page-size:5}") int pageSize) {
         this.bookService = bookService;
         this.bookRepository = bookRepository;
         this.categoryRepository = categoryRepository;
         this.authorRepository = authorRepository;
+        this.pageSize = pageSize;
     }
 
     // ── LIST ──────────────────────────────────────────────────────────────
@@ -53,27 +62,42 @@ public class BookWebController {
             @RequestParam(required = false) String title,
             @RequestParam(required = false) String author,
             @RequestParam(required = false) String category,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "title") String sort,
+            @RequestParam(defaultValue = "asc") String dir,
             Model model) {
 
-        List<Book> books;
         boolean searching = (title != null && !title.isBlank())
                 || (author != null && !author.isBlank())
                 || (category != null && !category.isBlank());
+        Page<Book> booksPage;
 
         if (searching) {
-            books = bookService.searchBooks(
+            List<Book> books = bookService.searchBooks(
                     blankToNull(title),
                     blankToNull(author),
                     blankToNull(category));
+            booksPage = new PageImpl<>(books);
         } else {
-            books = bookService.getAllBooks();
+            Pageable pageable = PageRequest.of(
+                    Math.max(page, 0),
+                    pageSize,
+                    Sort.by(resolveDirection(dir), resolveBookSort(sort))
+            );
+            booksPage = bookService.getBooksPage(pageable);
         }
 
-        model.addAttribute("books", books);
+        model.addAttribute("booksPage", booksPage);
+        model.addAttribute("books", booksPage.getContent());
         model.addAttribute("searchTitle", title);
         model.addAttribute("searchAuthor", author);
         model.addAttribute("searchCategory", category);
         model.addAttribute("searching", searching);
+        model.addAttribute("currentPage", booksPage.getNumber());
+        model.addAttribute("totalPages", booksPage.getTotalPages());
+        model.addAttribute("sort", sort);
+        model.addAttribute("dir", dir);
+        model.addAttribute("pageSize", pageSize);
         return "books/list";
     }
 
@@ -255,5 +279,17 @@ public class BookWebController {
 
     private String blankToNull(String s) {
         return (s == null || s.isBlank()) ? null : s;
+    }
+
+    private String resolveBookSort(String sort) {
+        return switch (sort == null ? "" : sort) {
+            case "isbn" -> "isbn";
+            case "copies" -> "totalCopies";
+            default -> "title";
+        };
+    }
+
+    private Sort.Direction resolveDirection(String dir) {
+        return "desc".equalsIgnoreCase(dir) ? Sort.Direction.DESC : Sort.Direction.ASC;
     }
 }

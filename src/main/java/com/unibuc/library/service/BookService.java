@@ -6,6 +6,8 @@ import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Book;
 import com.unibuc.library.repository.BookRepository;
 import com.unibuc.library.repository.LoanRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -42,6 +44,11 @@ public class BookService {
     public List<Book> getAllBooks() {
         log.debug("Fetching all books with authors and category");
         return bookRepository.findAllWithAuthorsAndCategory();
+    }
+
+    public Page<Book> getBooksPage(Pageable pageable) {
+        log.debug("Fetching books page {} with size {}", pageable.getPageNumber(), pageable.getPageSize());
+        return bookRepository.findAll(pageable);
     }
 
     public Book getBookById(Long id) {

@@ -6,6 +6,8 @@ import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Author;
 import com.unibuc.library.repository.AuthorRepository;
 import com.unibuc.library.repository.BookRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -41,6 +43,11 @@ public class AuthorService {
     public List<Author> getAllAuthors() {
         log.debug("Fetching all authors with books");
         return authorRepository.findAllWithBooks();
+    }
+
+    public Page<Author> getAuthorsPage(Pageable pageable) {
+        log.debug("Fetching authors page {} with size {}", pageable.getPageNumber(), pageable.getPageSize());
+        return authorRepository.findAll(pageable);
     }
 
     public Author getAuthorById(Long id) {

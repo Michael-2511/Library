@@ -41,7 +41,7 @@
       <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
           <h4 class="mb-0 fw-semibold"><i class="bi bi-book me-2 text-primary"></i>Books</h4>
-          <small class="text-muted" th:text="${books.size()} + ' book(s) found'"></small>
+          <small class="text-muted" th:text="${booksPage.totalElements} + ' book(s) found'"></small>
         </div>
         <a th:href="@{/books/new}" class="btn btn-primary btn-sm">
           <i class="bi bi-plus-lg me-1"></i>Add Book
@@ -67,9 +67,25 @@
               <input type="text" name="category" class="form-control form-control-sm"
                      placeholder="Search by category…" th:value="${searchCategory}" maxlength="200"/>
             </div>
+            <div class="col-md-2">
+              <label class="form-label small fw-semibold">Sort by</label>
+              <select name="sort" class="form-select form-select-sm">
+                <option value="title" th:selected="${sort == 'title'}">Title</option>
+                <option value="isbn" th:selected="${sort == 'isbn'}">ISBN</option>
+                <option value="copies" th:selected="${sort == 'copies'}">Copies</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label small fw-semibold">Direction</label>
+              <select name="dir" class="form-select form-select-sm">
+                <option value="asc" th:selected="${dir == 'asc'}">Ascending</option>
+                <option value="desc" th:selected="${dir == 'desc'}">Descending</option>
+              </select>
+            </div>
+            <input type="hidden" name="page" value="0"/>
             <div class="col-md-2 d-flex gap-2">
               <button type="submit" class="btn btn-outline-primary btn-sm flex-fill">
-                <i class="bi bi-search me-1"></i>Search
+                <i class="bi bi-search me-1"></i>Apply
               </button>
               <a th:href="@{/books}" class="btn btn-outline-secondary btn-sm flex-fill" th:if="${searching}">
                 <i class="bi bi-x-lg"></i>
@@ -153,6 +169,23 @@
           </div>
         </div>
       </div>
+
+      <nav th:if="${!searching and totalPages > 1}" class="mt-4" aria-label="Book pages">
+        <ul class="pagination justify-content-center mb-0">
+          <li class="page-item" th:classappend="${currentPage == 0} ? 'disabled'">
+            <a class="page-link" th:href="@{/books(page=${currentPage - 1}, sort=${sort}, dir=${dir})}">Previous</a>
+          </li>
+          <li class="page-item"
+              th:each="i : ${#numbers.sequence(0, totalPages - 1)}"
+              th:classappend="${i == currentPage} ? 'active'">
+            <a class="page-link" th:text="${i + 1}"
+               th:href="@{/books(page=${i}, sort=${sort}, dir=${dir})}"></a>
+          </li>
+          <li class="page-item" th:classappend="${currentPage + 1 >= totalPages} ? 'disabled'">
+            <a class="page-link" th:href="@{/books(page=${currentPage + 1}, sort=${sort}, dir=${dir})}">Next</a>
+          </li>
+        </ul>
+      </nav>
 
     </main>
   </div>

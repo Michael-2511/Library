@@ -219,3 +219,41 @@ ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create 
 [2m2026-05-13 21:17:42[0;39m [35m[http-nio-8080-exec-5][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.service.BookService[0;39m - Fetching all books with authors and category
 [2m2026-05-13 21:18:09[0;39m [35m[SpringApplicationShutdownHook][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
 [2m2026-05-13 21:18:09[0;39m [35m[SpringApplicationShutdownHook][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+[2m2026-05-13 21:28:03[0;39m [35m[main][0;39m [32mINFO [0;39m [36mc.unibuc.library.LibraryApplication[0;39m - Starting LibraryApplication using Java 24.0.2 with PID 4868 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+[2m2026-05-13 21:28:03[0;39m [35m[main][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.LibraryApplication[0;39m - Running with Spring Boot v4.0.1, Spring v7.0.2
+[2m2026-05-13 21:28:03[0;39m [35m[main][0;39m [32mINFO [0;39m [36mc.unibuc.library.LibraryApplication[0;39m - The following 1 profile is active: "dev"
+[2m2026-05-13 21:28:05[0;39m [35m[main][0;39m [32mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+[2m2026-05-13 21:28:05[0;39m [35m[main][0;39m [32mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+[2m2026-05-13 21:28:05[0;39m [35m[main][0;39m [32mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/11.0.15]
+[2m2026-05-13 21:28:07[0;39m [35m[main][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+[2m2026-05-13 21:28:07[0;39m [35m[main][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1d1deb11
+[2m2026-05-13 21:28:07[0;39m [35m[main][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+[2m2026-05-13 21:28:11[0;39m [35m[main][0;39m [33mWARN [0;39m [36mo.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2026-05-13 21:28:11[0;39m [35m[main][0;39m [32mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+[2m2026-05-13 21:28:11[0;39m [35m[main][0;39m [32mINFO [0;39m [36mc.unibuc.library.LibraryApplication[0;39m - Started LibraryApplication in 9.12 seconds (process running for 10.498)
+[2m2026-05-13 21:28:11[0;39m [35m[main][0;39m [33mWARN [0;39m [36mo.s.c.events.SpringDocAppInitializer[0;39m - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+[2m2026-05-13 21:28:11[0;39m [35m[main][0;39m [33mWARN [0;39m [36mo.s.c.events.SpringDocAppInitializer[0;39m - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+[2m2026-05-13 21:28:19[0;39m [35m[http-nio-8080-exec-1][0;39m [32mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2026-05-13 21:28:25[0;39m [35m[http-nio-8080-exec-3][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.service.BookService[0;39m - Fetching books page 0 with size 5
+[2m2026-05-13 21:28:25[0;39m [35m[http-nio-8080-exec-3][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:28:40[0;39m [35m[http-nio-8080-exec-2][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.service.BookService[0;39m - Fetching books page 0 with size 5
+[2m2026-05-13 21:28:40[0;39m [35m[http-nio-8080-exec-2][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:28:43[0;39m [35m[http-nio-8080-exec-4][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.service.BookService[0;39m - Fetching books page 0 with size 5
+[2m2026-05-13 21:28:43[0;39m [35m[http-nio-8080-exec-4][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:28:52[0;39m [35m[http-nio-8080-exec-5][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.service.BookService[0;39m - Fetching books page 0 with size 5
+[2m2026-05-13 21:28:52[0;39m [35m[http-nio-8080-exec-5][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:28:56[0;39m [35m[http-nio-8080-exec-6][0;39m [32mDEBUG[0;39m [36mc.u.library.service.AuthorService[0;39m - Fetching authors page 0 with size 5
+[2m2026-05-13 21:28:56[0;39m [35m[http-nio-8080-exec-6][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:28:58[0;39m [35m[http-nio-8080-exec-9][0;39m [32mDEBUG[0;39m [36mc.u.library.service.AuthorService[0;39m - Fetching authors page 1 with size 5
+[2m2026-05-13 21:28:58[0;39m [35m[http-nio-8080-exec-9][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:29:01[0;39m [35m[http-nio-8080-exec-8][0;39m [32mDEBUG[0;39m [36mc.u.library.service.AuthorService[0;39m - Fetching authors page 0 with size 5
+[2m2026-05-13 21:29:01[0;39m [35m[http-nio-8080-exec-8][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:29:02[0;39m [35m[http-nio-8080-exec-7][0;39m [32mDEBUG[0;39m [36mc.unibuc.library.service.UserService[0;39m - Fetching users page 0 with size 5
+[2m2026-05-13 21:29:05[0;39m [35m[http-nio-8080-exec-3][0;39m [32mDEBUG[0;39m [36mc.u.library.service.CategoryService[0;39m - Fetching all categories
+[2m2026-05-13 21:29:06[0;39m [35m[http-nio-8080-exec-2][0;39m [32mDEBUG[0;39m [36mc.u.library.service.AuthorService[0;39m - Fetching authors page 0 with size 5
+[2m2026-05-13 21:29:06[0;39m [35m[http-nio-8080-exec-2][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:29:08[0;39m [35m[http-nio-8080-exec-5][0;39m [32mDEBUG[0;39m [36mc.u.library.service.AuthorService[0;39m - Fetching authors page 0 with size 5
+[2m2026-05-13 21:29:08[0;39m [35m[http-nio-8080-exec-5][0;39m [33mWARN [0;39m [36morg.hibernate.orm.query[0;39m - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+[2m2026-05-13 21:29:20[0;39m [35m[http-nio-8080-exec-6][0;39m [32mDEBUG[0;39m [36mc.u.library.service.CategoryService[0;39m - Fetching all categories
+[2m2026-05-13 21:42:19[0;39m [35m[SpringApplicationShutdownHook][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+[2m2026-05-13 21:42:19[0;39m [35m[SpringApplicationShutdownHook][0;39m [32mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.

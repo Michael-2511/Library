@@ -5,6 +5,12 @@ import com.unibuc.library.exception.ResourceInUseException;
 import com.unibuc.library.model.Author;
 import com.unibuc.library.service.AuthorService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,29 +24,48 @@ import java.util.List;
 public class AuthorWebController {
 
     private final AuthorService authorService;
+    private final int pageSize;
 
-    public AuthorWebController(AuthorService authorService) {
+    public AuthorWebController(AuthorService authorService,
+                               @Value("${library.pagination.page-size:5}") int pageSize) {
         this.authorService = authorService;
+        this.pageSize = pageSize;
     }
 
     // ── LIST ──────────────────────────────────────────────────────────────
 
     @GetMapping
-    public String listAuthors(@RequestParam(required = false) String name, Model model) {
-        List<Author> authors;
+    public String listAuthors(@RequestParam(required = false) String name,
+                              @RequestParam(defaultValue = "0") int page,
+                              @RequestParam(defaultValue = "name") String sort,
+                              @RequestParam(defaultValue = "asc") String dir,
+                              Model model) {
         boolean searching = name != null && !name.isBlank();
+        Page<Author> authorsPage;
 
         if (searching) {
-            authors = authorService.getAllAuthors().stream()
+            List<Author> authors = authorService.getAllAuthors().stream()
                     .filter(a -> a.getName().toLowerCase().contains(name.toLowerCase()))
                     .toList();
+            authorsPage = new PageImpl<>(authors);
         } else {
-            authors = authorService.getAllAuthors();
+            Pageable pageable = PageRequest.of(
+                    Math.max(page, 0),
+                    pageSize,
+                    Sort.by(resolveDirection(dir), resolveAuthorSort(sort))
+            );
+            authorsPage = authorService.getAuthorsPage(pageable);
         }
 
-        model.addAttribute("authors", authors);
+        model.addAttribute("authorsPage", authorsPage);
+        model.addAttribute("authors", authorsPage.getContent());
         model.addAttribute("searchName", name);
         model.addAttribute("searching", searching);
+        model.addAttribute("currentPage", authorsPage.getNumber());
+        model.addAttribute("totalPages", authorsPage.getTotalPages());
+        model.addAttribute("sort", sort);
+        model.addAttribute("dir", dir);
+        model.addAttribute("pageSize", pageSize);
         return "authors/list";
     }
 
@@ -122,5 +147,16 @@ public class AuthorWebController {
             redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
         }
         return "redirect:/authors";
+    }
+
+    private String resolveAuthorSort(String sort) {
+        return switch (sort == null ? "" : sort) {
+            case "id" -> "id";
+            default -> "name";
+        };
+    }
+
+    private Sort.Direction resolveDirection(String dir) {
+        return "desc".equalsIgnoreCase(dir) ? Sort.Direction.DESC : Sort.Direction.ASC;
     }
 }

@@ -1,6 +1,9 @@
 package com.unibuc.library.repository;
 
 import com.unibuc.library.model.Book;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -20,6 +23,10 @@ public interface BookRepository extends JpaRepository<Book, Long> {
      */
     @Query("SELECT DISTINCT b FROM Book b LEFT JOIN FETCH b.authors LEFT JOIN FETCH b.category")
     List<Book> findAllWithAuthorsAndCategory();
+
+    @Override
+    @EntityGraph(attributePaths = {"authors", "category"})
+    Page<Book> findAll(Pageable pageable);
 
     /**
      * Fetches a single book with authors and category eagerly.
