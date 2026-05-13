@@ -6,12 +6,16 @@ import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.Author;
 import com.unibuc.library.repository.AuthorRepository;
 import com.unibuc.library.repository.BookRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class AuthorService {
+
+    private static final Logger log = LoggerFactory.getLogger(AuthorService.class);
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
@@ -22,6 +26,7 @@ public class AuthorService {
     }
 
     public Author createAuthor(Author author) {
+        log.info("Creating author '{}'", author.getName());
 
         authorRepository.findByName(author.getName())
                 .ifPresent(existingAuthor -> {
@@ -34,10 +39,12 @@ public class AuthorService {
     }
 
     public List<Author> getAllAuthors() {
+        log.debug("Fetching all authors with books");
         return authorRepository.findAllWithBooks();
     }
 
     public Author getAuthorById(Long id) {
+        log.debug("Fetching author by id {}", id);
         return authorRepository.findByIdWithBooks(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Author not found with id: " + id
@@ -45,6 +52,7 @@ public class AuthorService {
     }
 
     public Author updateAuthor(Long id, Author author) {
+        log.info("Updating author id {} to name '{}'", id, author.getName());
         Author existingAuthor = getAuthorById(id);
 
         authorRepository.findByName(author.getName())
@@ -69,11 +77,13 @@ public class AuthorService {
                 .anyMatch(author -> author.getId().equals(id));
 
         if (authorIsUsed) {
+            log.warn("Cannot delete author '{}' (id={}) because it is associated with books", existingAuthor.getName(), id);
             throw new ResourceInUseException(
                     "Author cannot be deleted because it is associated with one or more books"
             );
         }
 
+        log.info("Deleting author '{}' (id={})", existingAuthor.getName(), id);
         authorRepository.delete(existingAuthor);
     }
 }
