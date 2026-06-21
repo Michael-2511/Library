@@ -1,227 +1,7 @@
-%PARSER_ERROR[clr] %PARSER_ERROR[clr] %PARSER_ERROR[clr] %PARSER_ERROR[clr] - Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:352)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:302)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:248)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:225)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:180)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:173)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:151)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:137)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$0(SpringApplicationRunListeners.java:66)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:123)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:356)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at com.unibuc.library.LibraryApplication.main(LibraryApplication.java:10)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:296)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:274)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:86)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:65)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:337)
-	... 19 common frames omitted
-%PARSER_ERROR[clr] %PARSER_ERROR[clr] %PARSER_ERROR[clr] %PARSER_ERROR[clr] - Application run failed
-java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:352)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:302)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:248)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:225)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:180)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:173)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:151)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:133)
-	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:137)
-	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:82)
-	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$0(SpringApplicationRunListeners.java:66)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:123)
-	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:117)
-	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
-	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:356)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at com.unibuc.library.LibraryApplication.main(LibraryApplication.java:10)
-Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@4fd4cae3 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@f415a95 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - There is no conversion class registered for composite conversion word [clr]
-ERROR in ch.qos.logback.core.pattern.parser.Compiler@db44aa2 - Failed to create converter for [%clr] keyword
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:296)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:274)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:86)
-	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:65)
-	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
-	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:337)
-	... 19 common frames omitted
-[2m2026-05-13 22:30:53[0;39m [35m[http-nio-8080-exec-2][0;39m [31mERROR[0;39m [36mo.s.s.w.a.UsernamePasswordAuthenticationFilter[0;39m - An internal error occurred while trying to authenticate the user.
-org.springframework.security.authentication.InternalAuthenticationServiceException: JDBC exception executing SQL [ERROR: column u1_0.enabled does not exist
-  Position: 27] [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]; SQL [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:119)
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:143)
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:183)
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:215)
-	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:87)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:249)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:239)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:135)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
-	at java.base/java.lang.Thread.run(Thread.java:1447)
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [ERROR: column u1_0.enabled does not exist
-  Position: 27] [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]; SQL [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]
-	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:156)
+2026-06-21 16:58:53 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "ukkibbepcitr0a3cpk3rfr7nihn"
+  Detail: Key (isbn)=(978-0-451-52493-5) already exists.] [insert into books (available_copies,category_id,isbn,title,total_copies) values (?,?,?,?,?)]; SQL [insert into books (available_copies,category_id,isbn,title,total_copies) values (?,?,?,?,?)]; constraint [ukkibbepcitr0a3cpk3rfr7nihn]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:169)
 	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131)
 	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105)
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:199)
@@ -230,44 +10,77 @@ Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC
 	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:346)
 	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:157)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:137)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:166)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
-	at jdk.proxy2/jdk.proxy2.$Proxy175.findByEmail(Unknown Source)
-	at com.unibuc.library.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:26)
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:104)
-	... 61 common frames omitted
-Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [ERROR: column u1_0.enabled does not exist
-  Position: 27] [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]
-	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:63)
+	at jdk.proxy2/jdk.proxy2.$Proxy172.save(Unknown Source)
+	at com.unibuc.library.config.DataLoader.createBook(DataLoader.java:168)
+	at com.unibuc.library.config.DataLoader.lambda$loadInitialBooks$7(DataLoader.java:118)
+	at org.springframework.boot.SpringApplication.lambda$callRunner$1(SpringApplication.java:792)
+	at org.springframework.util.function.ThrowingConsumer$1.acceptWithException(ThrowingConsumer.java:82)
+	at org.springframework.util.function.ThrowingConsumer.accept(ThrowingConsumer.java:60)
+	at org.springframework.util.function.ThrowingConsumer$1.accept(ThrowingConsumer.java:86)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:800)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:791)
+	at org.springframework.boot.SpringApplication.lambda$callRunners$0(SpringApplication.java:776)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:510)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:776)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:328)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.unibuc.library.LibraryApplication.main(LibraryApplication.java:10)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: duplicate key value violates unique constraint "ukkibbepcitr0a3cpk3rfr7nihn"
+  Detail: Key (isbn)=(978-0-451-52493-5) already exists.] [insert into books (available_copies,category_id,isbn,title,total_copies) values (?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:73)
 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:290)
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:190)
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:71)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValues(JdbcSelectExecutorStandardImpl.java:393)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:354)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:135)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
-	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResultOrNull(AbstractSelectionQuery.java:330)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.java:414)
-	at jdk.proxy2/jdk.proxy2.$Proxy190.getSingleResultOrNull(Unknown Source)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:328)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:99)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:164)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:154)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:184)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:103)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:45)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:66)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:180)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:120)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:84)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:667)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:270)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:371)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:285)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:215)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:133)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:145)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:89)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:73)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:49)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:689)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:672)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:317)
+	at jdk.proxy2/jdk.proxy2.$Proxy156.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:663)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:278)
 	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169)
 	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:167)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:545)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:290)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:690)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:171)
 	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
@@ -276,153 +89,17 @@ Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
-	... 68 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ERROR: column u1_0.enabled does not exist
-  Position: 27
+	... 27 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "ukkibbepcitr0a3cpk3rfr7nihn"
+  Detail: Key (isbn)=(978-0-451-52493-5) already exists.
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2736)
 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421)
 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
 	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:525)
 	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435)
 	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
-	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:139)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:271)
-	... 101 common frames omitted
-[2m2026-05-13 22:32:28[0;39m [35m[http-nio-8080-exec-8][0;39m [31mERROR[0;39m [36mo.s.s.w.a.UsernamePasswordAuthenticationFilter[0;39m - An internal error occurred while trying to authenticate the user.
-org.springframework.security.authentication.InternalAuthenticationServiceException: JDBC exception executing SQL [ERROR: column u1_0.enabled does not exist
-  Position: 27] [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]; SQL [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:119)
-	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:143)
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:183)
-	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:215)
-	at org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.attemptAuthentication(UsernamePasswordAuthenticationFilter.java:87)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:249)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:239)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:110)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:96)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:135)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:380)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:237)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:195)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52)
-	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
-	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
-	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:317)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:355)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:272)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1778)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
-	at java.base/java.lang.Thread.run(Thread.java:1447)
-Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: JDBC exception executing SQL [ERROR: column u1_0.enabled does not exist
-  Position: 27] [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]; SQL [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]
-	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:156)
-	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131)
-	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105)
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:199)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:556)
-	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
-	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:346)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:157)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:222)
-	at jdk.proxy2/jdk.proxy2.$Proxy175.findByEmail(Unknown Source)
-	at com.unibuc.library.security.CustomUserDetailsService.loadUserByUsername(CustomUserDetailsService.java:26)
-	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:104)
-	... 61 common frames omitted
-Caused by: org.hibernate.exception.SQLGrammarException: JDBC exception executing SQL [ERROR: column u1_0.enabled does not exist
-  Position: 27] [select u1_0.id,u1_0.email,u1_0.enabled,u1_0.max_borrow_limit,u1_0.name,u1_0.password,u1_0.profile_id,u1_0.role from users u1_0 where u1_0.email=?]
-	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:63)
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:290)
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.getResultSet(DeferredResultSetAccess.java:190)
-	at org.hibernate.sql.results.jdbc.internal.JdbcValuesResultSetImpl.<init>(JdbcValuesResultSetImpl.java:71)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValues(JdbcSelectExecutorStandardImpl.java:393)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.resolveJdbcValuesSource(JdbcSelectExecutorStandardImpl.java:354)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.doExecuteQuery(JdbcSelectExecutorStandardImpl.java:135)
-	at org.hibernate.sql.exec.internal.JdbcSelectExecutorStandardImpl.executeQuery(JdbcSelectExecutorStandardImpl.java:100)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.executeQuery(JdbcSelectExecutor.java:63)
-	at org.hibernate.sql.exec.spi.JdbcSelectExecutor.list(JdbcSelectExecutor.java:137)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.lambda$new$1(ConcreteSqmSelectQueryPlan.java:128)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.withCacheableSqmInterpretation(ConcreteSqmSelectQueryPlan.java:427)
-	at org.hibernate.query.sqm.internal.ConcreteSqmSelectQueryPlan.performList(ConcreteSqmSelectQueryPlan.java:355)
-	at org.hibernate.query.sqm.internal.SqmQueryImpl.doList(SqmQueryImpl.java:374)
-	at org.hibernate.query.spi.AbstractSelectionQuery.list(AbstractSelectionQuery.java:153)
-	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResultOrNull(AbstractSelectionQuery.java:330)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$DeferredQueryInvocationHandler.invoke(SharedEntityManagerCreator.java:414)
-	at jdk.proxy2/jdk.proxy2.$Proxy190.getSingleResultOrNull(Unknown Source)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:328)
-	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:99)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:164)
-	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:154)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:169)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:167)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:146)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:370)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:135)
-	... 68 common frames omitted
-Caused by: org.postgresql.util.PSQLException: ERROR: column u1_0.enabled does not exist
-  Position: 27
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2736)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:525)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435)
-	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
-	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:139)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java)
-	at org.hibernate.sql.results.jdbc.internal.DeferredResultSetAccess.executeQuery(DeferredResultSetAccess.java:271)
-	... 101 common frames omitted
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:181)
+	... 74 common frames omitted
