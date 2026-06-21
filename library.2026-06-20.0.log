@@ -1,0 +1,17 @@
+2026-06-20 16:05:29 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 4624 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-20 16:05:29 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-20 16:05:29 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-20 16:05:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-20 16:05:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-20 16:05:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-20 16:05:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-20 16:05:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b8fcdf2
+2026-06-20 16:05:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-20 16:05:37 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-20 16:05:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-20 16:05:39 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 10.917 seconds (process running for 11.643)
+2026-06-20 16:05:39 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-20 16:05:39 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-20 16:06:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-20 16:09:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-20 16:09:49 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
