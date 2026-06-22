@@ -1,0 +1,98 @@
+@startuml ER Diagram
+
+skinparam linetype ortho
+skinparam entity {
+    BackgroundColor #F9F9F9
+    BorderColor #333333
+}
+
+entity "User" as user {
+    * id : Long <<PK>>
+    --
+    * name : String
+    * email : String <<unique>>
+    * password : String
+    * role : UserRole
+    * maxBorrowLimit : int
+    * enabled : boolean
+    * profile_id : Long <<FK, unique>>
+}
+
+entity "UserProfile" as profile {
+    * id : Long <<PK>>
+    --
+    * phoneNumber : String
+    * address : String
+}
+
+entity "Book" as book {
+    * id : Long <<PK>>
+    --
+    * title : String
+    * isbn : String <<unique>>
+    * totalCopies : int
+    * availableCopies : int
+    * category_id : Long <<FK>>
+}
+
+entity "Author" as author {
+    * id : Long <<PK>>
+    --
+    * name : String
+}
+
+entity "Category" as category {
+    * id : Long <<PK>>
+    --
+    * name : String <<unique>>
+}
+
+entity "Loan" as loan {
+    * id : Long <<PK>>
+    --
+    * borrowDate : LocalDate
+    * dueDate : LocalDate
+    returnDate : LocalDate
+    * user_id : Long <<FK>>
+    * book_id : Long <<FK>>
+}
+
+entity "Reservation" as reservation {
+    * id : Long <<PK>>
+    --
+    * reservationDate : LocalDate
+    * status : ReservationStatus
+    * user_id : Long <<FK>>
+    * book_id : Long <<FK>>
+}
+
+entity "book_authors" as book_authors {
+    * book_id : Long <<FK>>
+    * author_id : Long <<FK>>
+}
+
+enum "UserRole" as userrole {
+    ADMIN
+    LIBRARIAN
+    MEMBER
+}
+
+enum "ReservationStatus" as resstatus {
+    ACTIVE
+    CANCELLED
+    COMPLETED
+}
+
+user ||--|| profile : "1:1"
+user ||--o{ loan : "1:N"
+user ||--o{ reservation : "1:N"
+book ||--o{ loan : "1:N"
+book ||--o{ reservation : "1:N"
+category ||--o{ book : "1:N"
+book ||--o{ book_authors : "1:N"
+author ||--o{ book_authors : "1:N"
+
+user .. userrole
+reservation .. resstatus
+
+@enduml
