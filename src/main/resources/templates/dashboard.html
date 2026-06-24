@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -102,7 +102,7 @@
           </a>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-3" sec:authorize="hasRole('ADMIN')">
           <a th:href="@{/users}" class="text-decoration-none">
             <div class="card stat-card h-100">
               <div class="card-body d-flex align-items-center gap-3">
