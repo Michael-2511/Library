@@ -16,6 +16,7 @@
         <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
         <div th:if="${param.error}" class="alert alert-danger">Invalid credentials</div>
         <div th:if="${param.logout}" class="alert alert-success">You have been logged out</div>
+        <div th:if="${param.registered}" class="alert alert-success">Account created successfully! Please sign in.</div>
 
         <div class="mb-3">
           <label class="form-label">Email</label>
@@ -33,6 +34,10 @@
           <button class="btn btn-primary" type="submit">Login</button>
         </div>
       </form>
+
+      <div class="text-center mt-3">
+        <small>Don't have an account? <a th:href="@{/signup}">Sign up</a></small>
+      </div>
     </div>
   </div>
 </div>

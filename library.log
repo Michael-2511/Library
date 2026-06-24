@@ -689,3 +689,132 @@
 2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
 2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 22:30:49 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 5864 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 22:30:49 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 22:30:49 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-24 22:30:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:30:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 22:30:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 22:30:52 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 22:30:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4af606e9
+2026-06-24 22:30:53 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 22:30:57 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 22:30:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:30:58 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 10.087 seconds (process running for 10.791)
+2026-06-24 22:30:58 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
+2026-06-24 22:30:58 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 22:30:58 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 22:31:11 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 22:32:31 [http-nio-8080-exec-7] DEBUG c.unibuc.library.service.UserService - Fetching users page 0 with size 5
+2026-06-24 22:33:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 22:33:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 22:36:29 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 17688 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 22:36:29 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 22:36:29 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-24 22:36:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:36:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 22:36:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 22:36:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 22:36:33 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59cde35
+2026-06-24 22:36:33 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 22:36:36 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 22:36:38 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:36:38 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.519 seconds (process running for 10.223)
+2026-06-24 22:36:38 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
+2026-06-24 22:36:38 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 22:36:38 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 22:36:42 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 22:37:20 [http-nio-8080-exec-9] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 22:37:21 [http-nio-8080-exec-5] DEBUG c.u.library.service.AuthorService - Fetching authors page 0 with size 5
+2026-06-24 22:37:21 [http-nio-8080-exec-5] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:37:22 [http-nio-8080-exec-1] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
+2026-06-24 22:37:22 [http-nio-8080-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:37:24 [http-nio-8080-exec-3] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
+2026-06-24 22:37:24 [http-nio-8080-exec-3] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:37:33 [http-nio-8080-exec-8] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 10
+2026-06-24 22:37:33 [http-nio-8080-exec-8] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:38:00 [http-nio-8080-exec-2] DEBUG c.unibuc.library.service.UserService - Fetching users page 0 with size 5
+2026-06-24 22:40:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 22:40:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 22:44:37 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 6572 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 22:44:37 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 22:44:37 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-24 22:44:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:44:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 22:44:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 22:44:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 22:44:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@155c7eae
+2026-06-24 22:44:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 22:44:44 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 22:44:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:44:46 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.453 seconds (process running for 10.181)
+2026-06-24 22:44:46 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
+2026-06-24 22:44:46 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 22:44:46 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 22:45:16 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 22:46:27 [http-nio-8080-exec-10] DEBUG c.unibuc.library.service.UserService - Fetching users page 0 with size 5
+2026-06-24 22:46:29 [http-nio-8080-exec-2] DEBUG c.unibuc.library.service.UserService - Fetching users page 0 with size 5
+2026-06-24 22:50:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 22:50:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 22:50:40 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 17164 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 22:50:40 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 22:50:40 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-24 22:50:42 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:50:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 22:50:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 22:50:43 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 22:50:44 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@228958a
+2026-06-24 22:50:44 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 22:50:47 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 22:50:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:50:48 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.913 seconds (process running for 10.648)
+2026-06-24 22:50:49 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
+2026-06-24 22:50:49 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 22:50:49 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 22:51:05 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 22:53:03 [http-nio-8080-exec-10] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 22:53:04 [http-nio-8080-exec-7] DEBUG c.u.library.service.AuthorService - Fetching authors page 0 with size 5
+2026-06-24 22:53:04 [http-nio-8080-exec-7] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:53:10 [http-nio-8080-exec-5] DEBUG c.u.library.service.AuthorService - Fetching authors page 0 with size 5
+2026-06-24 22:53:10 [http-nio-8080-exec-5] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:53:17 [http-nio-8080-exec-6] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 22:53:33 [http-nio-8080-exec-9] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
+2026-06-24 22:53:33 [http-nio-8080-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-06-24 22:55:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 22:55:31 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 22:55:44 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 3356 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 22:55:44 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 22:55:44 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-24 22:55:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:55:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 22:55:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 22:55:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 22:55:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@44f23927
+2026-06-24 22:55:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 22:55:51 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 22:55:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-24 22:55:53 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.99 seconds (process running for 10.678)
+2026-06-24 22:55:53 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
+2026-06-24 22:55:53 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 22:55:53 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 22:56:09 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 23:00:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 23:00:02 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 23:00:32 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 18476 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 23:00:32 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 23:00:32 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
+2026-06-24 23:00:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-24 23:00:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 23:00:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 23:00:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 23:00:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@44f23927
+2026-06-24 23:00:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 23:00:39 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 23:00:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-24 23:00:41 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.735 seconds (process running for 10.481)
+2026-06-24 23:00:41 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
+2026-06-24 23:00:41 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 23:00:41 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 23:00:45 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 23:01:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 23:01:15 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

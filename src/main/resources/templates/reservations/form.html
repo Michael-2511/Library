@@ -33,7 +33,14 @@
         </div>
         <div class="card-body p-4">
           <form th:action="@{/reservations/new}" method="post" id="resForm" novalidate>
-            <div class="mb-3">
+            <!-- Members reserve for themselves (no user selection) -->
+            <div th:if="${isMember}" class="mb-3">
+              <label class="form-label fw-semibold">User</label>
+              <input type="text" class="form-control" th:value="${currentUser.name + ' (' + currentUser.email + ')'}" disabled/>
+              <input type="hidden" name="userId" th:value="${currentUser.id}"/>
+            </div>
+            <!-- Librarians/Admins can pick any user -->
+            <div th:unless="${isMember}" class="mb-3">
               <label for="userId" class="form-label fw-semibold">User <span class="required-star">*</span></label>
               <select id="userId" name="userId" class="form-select" required>
                 <option value="">— Select user —</option>
