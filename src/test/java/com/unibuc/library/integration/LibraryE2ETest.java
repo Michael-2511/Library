@@ -18,6 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
+@org.springframework.context.annotation.Import(TestSecurityConfig.class)
 public class LibraryE2ETest {
 
     @LocalServerPort
@@ -56,6 +57,7 @@ public class LibraryE2ETest {
         User user = new User();
         user.setName("Borrower");
         user.setEmail("borrower@example.com");
+        user.setPassword("password123");
         user.setRole(UserRole.MEMBER);
         user.setMaxBorrowLimit(2);
         user = userRepository.save(user);
@@ -89,6 +91,7 @@ public class LibraryE2ETest {
         User u1 = new User();
         u1.setName("First");
         u1.setEmail("first@example.com");
+        u1.setPassword("password123");
         u1.setRole(UserRole.MEMBER);
         u1.setMaxBorrowLimit(2);
         u1 = userRepository.save(u1);
@@ -96,6 +99,7 @@ public class LibraryE2ETest {
         User u2 = new User();
         u2.setName("Second");
         u2.setEmail("second@example.com");
+        u2.setPassword("password123");
         u2.setRole(UserRole.MEMBER);
         u2.setMaxBorrowLimit(2);
         u2 = userRepository.save(u2);
@@ -146,6 +150,7 @@ public class LibraryE2ETest {
         User user = new User();
         user.setName("OverdueUser");
         user.setEmail("overdue@example.com");
+        user.setPassword("password123");
         user.setRole(UserRole.MEMBER);
         user.setMaxBorrowLimit(2);
         user = userRepository.save(user);

@@ -4,6 +4,7 @@ import com.unibuc.library.exception.DuplicateResourceException;
 import com.unibuc.library.exception.ResourceNotFoundException;
 import com.unibuc.library.model.*;
 import com.unibuc.library.repository.BookRepository;
+import com.unibuc.library.repository.LoanRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -26,6 +27,9 @@ class BookServiceTest {
 
     @Mock
     private BookRepository bookRepository;
+
+    @Mock
+    private LoanRepository loanRepository;
 
     @InjectMocks
     private BookService bookService;
@@ -99,7 +103,7 @@ class BookServiceTest {
         book2.setIsbn("9780439023528");
 
         List<Book> books = Arrays.asList(book, book2);
-        when(bookRepository.findAll()).thenReturn(books);
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(books);
 
         // Act
         List<Book> result = bookService.getAllBooks();
@@ -109,13 +113,13 @@ class BookServiceTest {
         assertEquals(2, result.size());
         assertEquals("A Game of Thrones", result.get(0).getTitle());
         assertEquals("The Hunger Games", result.get(1).getTitle());
-        verify(bookRepository).findAll();
+        verify(bookRepository).findAllWithAuthorsAndCategory();
     }
 
     @Test
     void getBookById_Success() {
         // Arrange
-        when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.findByIdWithAuthorsAndCategory(1L)).thenReturn(Optional.of(book));
 
         // Act
         Book result = bookService.getBookById(1L);
@@ -124,33 +128,35 @@ class BookServiceTest {
         assertNotNull(result);
         assertEquals(1L, result.getId());
         assertEquals("A Game of Thrones", result.getTitle());
-        verify(bookRepository).findById(1L);
+        verify(bookRepository).findByIdWithAuthorsAndCategory(1L);
     }
 
     @Test
     void getBookById_NotFound_ThrowsException() {
         // Arrange
-        when(bookRepository.findById(999L)).thenReturn(Optional.empty());
+        when(bookRepository.findByIdWithAuthorsAndCategory(999L)).thenReturn(Optional.empty());
 
         // Act & Assert
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class,
                 () -> bookService.getBookById(999L));
 
         assertEquals("Book not found with id: 999", exception.getMessage());
-        verify(bookRepository).findById(999L);
+        verify(bookRepository).findByIdWithAuthorsAndCategory(999L);
     }
 
     @Test
     void deleteBook_Success() {
         // Arrange
-        when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
+        when(bookRepository.findByIdWithAuthorsAndCategory(1L)).thenReturn(Optional.of(book));
+        when(loanRepository.existsByBookId(1L)).thenReturn(false);
         doNothing().when(bookRepository).delete(book);
 
         // Act
         bookService.deleteBook(1L);
 
         // Assert
-        verify(bookRepository).findById(1L);
+        verify(bookRepository).findByIdWithAuthorsAndCategory(1L);
+        verify(loanRepository).existsByBookId(1L);
         verify(bookRepository).delete(book);
     }
 
@@ -162,7 +168,7 @@ class BookServiceTest {
         book2.setTitle("The Hunger Games");
 
         List<Book> allBooks = Arrays.asList(book, book2);
-        when(bookRepository.findAll()).thenReturn(allBooks);
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(allBooks);
 
         // Act
         List<Book> result = bookService.searchBooksByTitle("Game");
@@ -170,13 +176,13 @@ class BookServiceTest {
         // Assert
         assertNotNull(result);
         assertEquals(2, result.size()); // Both contain "Game"
-        verify(bookRepository).findAll();
+        verify(bookRepository).findAllWithAuthorsAndCategory();
     }
 
     @Test
     void searchBooksByTitle_NoMatch_ReturnsEmpty() {
         // Arrange
-        when(bookRepository.findAll()).thenReturn(Arrays.asList(book));
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(Arrays.asList(book));
 
         // Act
         List<Book> result = bookService.searchBooksByTitle("Nonexistent");
@@ -184,7 +190,7 @@ class BookServiceTest {
         // Assert
         assertNotNull(result);
         assertTrue(result.isEmpty());
-        verify(bookRepository).findAll();
+        verify(bookRepository).findAllWithAuthorsAndCategory();
     }
 
     @Test
@@ -201,7 +207,7 @@ class BookServiceTest {
         book2.setCategory(category);
 
         List<Book> allBooks = Arrays.asList(book, book2);
-        when(bookRepository.findAll()).thenReturn(allBooks);
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(allBooks);
 
         // Act
         List<Book> result = bookService.searchBooks("Game", "Martin", "Fantasy");
@@ -210,7 +216,7 @@ class BookServiceTest {
         assertNotNull(result);
         assertEquals(1, result.size());
         assertEquals("A Game of Thrones", result.get(0).getTitle());
-        verify(bookRepository).findAll();
+        verify(bookRepository).findAllWithAuthorsAndCategory();
     }
 
     @Test
@@ -227,7 +233,7 @@ class BookServiceTest {
         book2.setCategory(category);
 
         List<Book> allBooks = Arrays.asList(book, book2);
-        when(bookRepository.findAll()).thenReturn(allBooks);
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(allBooks);
 
         // Act - Search only by author
         List<Book> result = bookService.searchBooks(null, "Martin", null);
@@ -235,14 +241,14 @@ class BookServiceTest {
         // Assert
         assertNotNull(result);
         assertEquals(2, result.size());
-        verify(bookRepository).findAll();
+        verify(bookRepository).findAllWithAuthorsAndCategory();
     }
 
     @Test
     void searchBooks_NoCriteria_ReturnsAll() {
         // Arrange
         List<Book> allBooks = Arrays.asList(book);
-        when(bookRepository.findAll()).thenReturn(allBooks);
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(allBooks);
 
         // Act
         List<Book> result = bookService.searchBooks(null, null, null);
@@ -250,13 +256,13 @@ class BookServiceTest {
         // Assert
         assertNotNull(result);
         assertEquals(1, result.size());
-        verify(bookRepository).findAll();
+        verify(bookRepository).findAllWithAuthorsAndCategory();
     }
 
     @Test
     void searchBooks_CaseInsensitive_Success() {
         // Arrange
-        when(bookRepository.findAll()).thenReturn(Arrays.asList(book));
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(Arrays.asList(book));
 
         // Act - Different cases should still match
         List<Book> result1 = bookService.searchBooks("GAME", null, null);
@@ -267,6 +273,6 @@ class BookServiceTest {
         assertEquals(1, result1.size());
         assertEquals(1, result2.size());
         assertEquals(1, result3.size());
-        verify(bookRepository, times(3)).findAll();
+        verify(bookRepository, times(3)).findAllWithAuthorsAndCategory();
     }
 }
