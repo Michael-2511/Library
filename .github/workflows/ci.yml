@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -50,3 +50,18 @@ jobs:
         with:
           name: jacoco-report
           path: target/site/jacoco/
+
+      - name: Build JAR
+        run: ./mvnw package -DskipTests --batch-mode
+
+      - name: Deploy to AWS Elastic Beanstalk
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: einaregilsson/beanstalk-deploy@v22
+        with:
+          aws_access_key: ${{ secrets.AWS_AWBD_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_AWBD_SECRET_ACCESS_KEY }}
+          application_name: library-db-1
+          environment_name: awbd-library-1
+          version_label: ${{ github.sha }}
+          region: us-east-1
+          deployment_package: target/library-0.0.1-SNAPSHOT.jar
