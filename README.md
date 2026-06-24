@@ -351,6 +351,32 @@ log.warn("Cannot delete book '{}' (id={}) because it has associated loans", book
 
 ---
 
+### 11. CI/CD Pipeline
+
+#### Technology: GitHub Actions
+
+A continuous integration pipeline is configured in `.github/workflows/ci.yml` and runs automatically on every push to `main`/`dev` and on pull requests.
+
+#### Pipeline Steps
+
+| Step                        | Description                                      |
+|-----------------------------|--------------------------------------------------|
+| Checkout code               | Pulls the latest source from the repository      |
+| Set up JDK 21              | Installs Temurin JDK 21 with Maven caching       |
+| Run tests (H2 profile)     | Executes all unit + integration tests            |
+| Generate JaCoCo report     | Produces code coverage report                    |
+| Upload coverage artifact   | Saves JaCoCo HTML report as downloadable artifact|
+
+#### Triggers
+- **Push** to `main` or `dev` branches
+- **Pull requests** targeting `main`
+
+#### Services
+- PostgreSQL 15 service container (available if needed for dev-profile tests)
+- Tests run against H2 in-memory DB (test profile) for speed and isolation
+
+---
+
 ### 12. AI Agents — Development
 
 #### Tools Used
