@@ -1,75 +1,691 @@
-2026-06-22 13:04:34 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 15740 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
-2026-06-22 13:04:34 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
-2026-06-22 13:04:34 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
-2026-06-22 13:04:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-06-22 13:04:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-06-22 13:04:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-06-22 13:04:38 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-06-22 13:04:39 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1bde9a22
-2026-06-22 13:04:39 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-06-22 13:04:43 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-22 13:04:45 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-06-22 13:04:45 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 11.861 seconds (process running for 12.66)
-2026-06-22 13:04:45 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
-2026-06-22 13:04:45 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-22 13:04:45 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-22 13:12:47 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-22 13:13:00 [http-nio-8080-exec-9] DEBUG c.u.library.service.AuthorService - Fetching authors page 0 with size 5
-2026-06-22 13:13:00 [http-nio-8080-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 13:13:35 [http-nio-8080-exec-1] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
-2026-06-22 13:13:35 [http-nio-8080-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 13:13:38 [http-nio-8080-exec-3] DEBUG c.u.library.service.CategoryService - Fetching all categories
-2026-06-22 13:13:38 [http-nio-8080-exec-4] DEBUG c.u.library.service.AuthorService - Fetching authors page 0 with size 5
-2026-06-22 13:13:38 [http-nio-8080-exec-4] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 13:13:39 [http-nio-8080-exec-5] DEBUG c.u.library.service.CategoryService - Fetching all categories
-2026-06-22 13:16:54 [http-nio-8080-exec-9] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
-2026-06-22 13:16:54 [http-nio-8080-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 13:43:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-06-22 13:43:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-06-22 14:47:10 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 4692 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
-2026-06-22 14:47:10 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
-2026-06-22 14:47:10 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
-2026-06-22 14:47:12 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-06-22 14:47:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-06-22 14:47:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-06-22 14:47:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-06-22 14:47:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59cde35
-2026-06-22 14:47:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-06-22 14:47:17 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-22 14:47:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-06-22 14:47:19 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.283 seconds (process running for 9.996)
-2026-06-22 14:47:19 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
-2026-06-22 14:47:19 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-22 14:47:19 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-22 14:47:22 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-22 14:47:29 [http-nio-8080-exec-4] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
-2026-06-22 14:47:29 [http-nio-8080-exec-4] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 14:47:43 [http-nio-8080-exec-9] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
-2026-06-22 14:47:43 [http-nio-8080-exec-9] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 14:48:09 [http-nio-8080-exec-10] DEBUG c.u.library.service.CategoryService - Fetching all categories
-2026-06-22 14:48:14 [http-nio-8080-exec-1] DEBUG c.u.library.service.AuthorService - Fetching authors page 0 with size 5
-2026-06-22 14:48:14 [http-nio-8080-exec-1] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 14:48:15 [http-nio-8080-exec-2] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
-2026-06-22 14:48:15 [http-nio-8080-exec-2] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 14:49:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-06-22 14:49:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2026-06-22 14:56:15 [main] INFO  c.unibuc.library.LibraryApplication - Starting LibraryApplication using Java 21.0.8 with PID 640 (E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library\target\classes started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
-2026-06-22 14:56:15 [main] DEBUG c.unibuc.library.LibraryApplication - Running with Spring Boot v4.0.1, Spring v7.0.2
-2026-06-22 14:56:15 [main] INFO  c.unibuc.library.LibraryApplication - The following 1 profile is active: "dev"
-2026-06-22 14:56:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-06-22 14:56:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-06-22 14:56:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-06-22 14:56:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2026-06-22 14:56:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@59cde35
-2026-06-22 14:56:19 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2026-06-22 14:56:22 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-06-22 14:56:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-06-22 14:56:24 [main] INFO  c.unibuc.library.LibraryApplication - Started LibraryApplication in 9.452 seconds (process running for 10.131)
-2026-06-22 14:56:24 [main] INFO  c.unibuc.library.config.DataLoader - Books already exist — skipping seed data.
-2026-06-22 14:56:24 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-06-22 14:56:24 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-06-22 14:56:27 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-06-22 14:56:34 [http-nio-8080-exec-4] DEBUG c.unibuc.library.service.BookService - Fetching books page 0 with size 5
-2026-06-22 14:56:34 [http-nio-8080-exec-4] WARN  org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
-2026-06-22 14:58:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2026-06-22 14:58:11 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:17:15 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 5312 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:17:15 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:17:15 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:17:18 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:17:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:17:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:17:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:17:20 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:17:20 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:17:26 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:17:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:17:27 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 13.662 seconds (process running for 28.668)
+2026-06-24 19:17:28 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:17:28 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:17:28 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:17:28 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:17:28 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:17:28 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:17:28 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:17:28 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:17:29 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 5312 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:17:29 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:17:29 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:17:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:17:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:17:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:17:30 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:17:30 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 1.626 seconds (process running for 31.793)
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:17:31 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:17:31 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:17:31 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:17:31 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:17:31 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:17:31 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:17:31 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:17:31 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:17:31 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:17:31 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:17:31 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:17:31 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:17:32 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:17:32 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:17:32 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:17:32 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:17:32 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:17:32 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:17:32 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:17:32 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:17:32 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:17:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:17:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:17:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:17:33 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 19:20:12 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 15976 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:20:12 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:20:12 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:20:16 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:20:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:20:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:20:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:20:18 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:20:18 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:20:24 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:20:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:20:25 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 15.383 seconds (process running for 28.203)
+2026-06-24 19:20:26 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:20:26 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:20:26 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:20:26 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:20:26 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:20:27 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:20:27 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:20:27 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:20:27 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 15976 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:20:27 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:20:27 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:20:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:20:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:20:28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:20:28 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:20:29 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 1.768 seconds (process running for 31.462)
+2026-06-24 19:20:29 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:20:29 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:20:29 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:20:29 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:20:29 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:20:29 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:20:29 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:20:29 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:20:30 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:20:30 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:20:30 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:20:30 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:20:30 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:20:31 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:20:31 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:20:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:20:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:20:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:20:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 19:21:35 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 8612 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:21:35 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:21:35 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:21:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:21:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:21:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:21:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:21:42 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:21:42 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:21:47 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:21:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:21:48 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 14.736 seconds (process running for 27.539)
+2026-06-24 19:21:49 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:21:49 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:21:49 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:21:49 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:21:49 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:21:50 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:21:50 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:21:50 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:21:50 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 8612 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:21:50 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:21:50 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:21:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:21:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:21:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:21:51 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:21:52 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 1.697 seconds (process running for 30.731)
+2026-06-24 19:21:52 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:21:52 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:21:52 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:21:52 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:21:52 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:21:52 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:21:52 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:21:52 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:21:53 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:21:53 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:21:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:21:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:21:53 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:21:54 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:21:54 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:21:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:21:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:21:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:21:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 19:24:24 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 7176 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:24:24 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:24:24 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:24:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:24:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:24:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:24:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:24:30 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:24:30 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:24:36 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:24:38 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:24:38 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 15.673 seconds (process running for 30.95)
+2026-06-24 19:24:39 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:24:39 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:24:39 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:24:39 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:24:39 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:24:40 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:24:40 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:24:40 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:24:40 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 7176 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:24:40 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:24:40 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:24:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:24:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:24:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:24:41 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:24:42 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 2.132 seconds (process running for 34.825)
+2026-06-24 19:24:42 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:24:42 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:24:42 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:24:42 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:24:42 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:24:43 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:24:43 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:24:43 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:24:43 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:24:43 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:24:43 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:24:43 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:24:43 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:24:43 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:24:43 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:24:43 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:24:44 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:24:44 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:24:44 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:24:44 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:24:44 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:24:44 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:24:44 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:24:45 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:24:45 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:24:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:24:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:24:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:24:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 19:27:45 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 10356 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:27:45 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:27:45 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:27:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:27:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:27:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:27:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:27:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:27:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:27:57 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:27:59 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:27:59 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 15.975 seconds (process running for 29.374)
+2026-06-24 19:28:00 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:28:00 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:28:00 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:28:00 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:28:00 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:28:01 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:28:01 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:28:01 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:28:01 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 19:28:02 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 10356 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:28:02 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:28:02 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:28:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:28:03 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:28:03 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:28:04 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:28:04 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 2.319 seconds (process running for 34.507)
+2026-06-24 19:28:05 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:28:05 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:28:05 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:28:05 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:28:05 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:28:05 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:28:05 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:28:05 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:28:06 [main] WARN  c.u.library.service.AuthorService - Cannot delete author 'George R.R. Martin' (id=1) because it is associated with books
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.AuthorService - Deleting author 'George R.R. Martin' (id=1)
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:28:06 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:28:06 [main] INFO  c.unibuc.library.service.BookService - Deleting book 'A Game of Thrones' (id=1)
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:28:06 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:28:06 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:28:06 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:28:06 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:28:07 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:28:07 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:28:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:28:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:28:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:28:08 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 19:29:52 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 18840 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:29:52 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:29:52 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:29:56 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:29:56 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:29:56 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:29:58 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:29:59 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:29:59 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:30:05 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:30:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:30:07 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 15.75 seconds (process running for 28.706)
+2026-06-24 19:30:07 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:30:07 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:30:07 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:30:07 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:30:07 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:30:08 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:30:08 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:30:08 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:30:08 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 19:30:09 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 18840 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:30:09 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:30:09 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:30:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:30:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:30:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:30:11 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:30:11 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 2.158 seconds (process running for 33.32)
+2026-06-24 19:30:12 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:30:12 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:30:12 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:30:12 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:30:12 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:30:12 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:30:12 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:30:12 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:30:12 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:30:12 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:30:12 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:30:12 [main] WARN  c.u.library.service.AuthorService - Cannot delete author 'George R.R. Martin' (id=1) because it is associated with books
+2026-06-24 19:30:12 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:30:12 [main] INFO  c.u.library.service.AuthorService - Deleting author 'George R.R. Martin' (id=1)
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:30:12 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.BookService - Deleting book 'A Game of Thrones' (id=1)
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:30:13 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:30:13 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:30:13 [main] WARN  c.u.library.service.CategoryService - Cannot delete category 'Fantasy' (id=1) because it is associated with books
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:30:13 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:30:13 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:30:13 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:30:13 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:30:13 [main] WARN  c.unibuc.library.service.UserService - Cannot delete user 'John Doe' (id=1) because it has reservations
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:30:13 [main] WARN  c.unibuc.library.service.UserService - Cannot delete user 'John Doe' (id=1) because it has loan history
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:30:13 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:30:13 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:30:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:30:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:30:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:30:14 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-06-24 19:35:36 [main] INFO  c.u.l.integration.LibraryE2ETest - Starting LibraryE2ETest using Java 21.0.8 with PID 3212 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:35:36 [main] DEBUG c.u.l.integration.LibraryE2ETest - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:35:36 [main] INFO  c.u.l.integration.LibraryE2ETest - The following 1 profile is active: "test"
+2026-06-24 19:35:39 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:35:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-24 19:35:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-06-24 19:35:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-24 19:35:41 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:35:41 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-24 19:35:46 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:35:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-auto-1"]
+2026-06-24 19:35:48 [main] INFO  c.u.l.integration.LibraryE2ETest - Started LibraryE2ETest in 13.101 seconds (process running for 25.597)
+2026-06-24 19:35:48 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:35:48 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:35:48 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:35:48 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:35:48 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:35:49 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:35:49 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:35:49 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:35:49 [http-nio-auto-1-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-24 19:35:50 [main] INFO  c.u.library.LibraryApplicationTests - Starting LibraryApplicationTests using Java 21.0.8 with PID 3212 (started by Mihai in E:\Proiecte-Offline\TehnologiiWeb_Raican_Mihai_406\library)
+2026-06-24 19:35:50 [main] DEBUG c.u.library.LibraryApplicationTests - Running with Spring Boot v4.0.1, Spring v7.0.2
+2026-06-24 19:35:50 [main] INFO  c.u.library.LibraryApplicationTests - The following 1 profile is active: "test"
+2026-06-24 19:35:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-06-24 19:35:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:library_test_db user=SA
+2026-06-24 19:35:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-06-24 19:35:51 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-24 19:35:51 [main] INFO  c.u.library.LibraryApplicationTests - Started LibraryApplicationTests in 1.567 seconds (process running for 29.175)
+2026-06-24 19:35:52 [main] INFO  c.unibuc.library.config.DataLoader - === INITIAL CREDENTIALS ===
+2026-06-24 19:35:52 [main] INFO  c.unibuc.library.config.DataLoader - ADMIN: admin@admin / adminadmin
+2026-06-24 19:35:52 [main] INFO  c.unibuc.library.config.DataLoader - LIBRARIAN: librarian@local / lib12345
+2026-06-24 19:35:52 [main] INFO  c.unibuc.library.config.DataLoader - MEMBER: member@local / member123
+2026-06-24 19:35:52 [main] INFO  c.unibuc.library.config.DataLoader - ==========================
+2026-06-24 19:35:52 [main] INFO  c.unibuc.library.config.DataLoader - === Seeded 30 books with authors and categories ===
+2026-06-24 19:35:52 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-06-24 19:35:52 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-06-24 19:35:52 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'George R. R. Martin'
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:35:52 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:35:52 [main] INFO  c.u.library.service.AuthorService - Creating author 'George R.R. Martin'
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:35:52 [main] WARN  c.u.library.service.AuthorService - Cannot delete author 'George R.R. Martin' (id=1) because it is associated with books
+2026-06-24 19:35:52 [main] INFO  c.u.library.service.AuthorService - Updating author id 1 to name 'J.K. Rowling'
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 1
+2026-06-24 19:35:52 [main] INFO  c.u.library.service.AuthorService - Deleting author 'George R.R. Martin' (id=1)
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching author by id 999
+2026-06-24 19:35:52 [main] DEBUG c.u.library.service.AuthorService - Fetching all authors with books
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='null', category='null'
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.BookService - Deleting book 'A Game of Thrones' (id=1)
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Game'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching all books with authors and category
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='Game', author='Martin', category='Fantasy'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 1
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='null', author='Martin', category='null'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books by title with keyword 'Nonexistent'
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.BookService - Creating book with ISBN '9780553573404' and title 'A Game of Thrones'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GAME', author='null', category='null'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='game', author='null', category='null'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Searching books with filters title='GaMe', author='null', category='null'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.BookService - Fetching book by id 999
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:35:53 [main] INFO  c.u.library.service.CategoryService - Deleting category 'Fantasy' (id=1)
+2026-06-24 19:35:53 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Epic Fantasy'
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:35:53 [main] WARN  c.u.library.service.CategoryService - Cannot delete category 'Fantasy' (id=1) because it is associated with books
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching all categories
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 999
+2026-06-24 19:35:53 [main] INFO  c.u.library.service.CategoryService - Updating category id 1 to name 'Mystery'
+2026-06-24 19:35:53 [main] DEBUG c.u.library.service.CategoryService - Fetching category by id 1
+2026-06-24 19:35:53 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:35:53 [main] INFO  c.u.library.service.CategoryService - Creating category 'Fantasy'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'Jane' and email 'jane@example.com'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:35:53 [main] WARN  c.unibuc.library.service.UserService - Cannot delete user 'John Doe' (id=1) because it has reservations
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Bob Reader' with email 'bob.reader@example.com'
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Jane Smith' with email 'jane.smith@example.com'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:35:53 [main] WARN  c.unibuc.library.service.UserService - Cannot delete user 'John Doe' (id=1) because it has loan history
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching all users
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Deleting user 'John Doe' (id=1)
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Updating user id 1 to name 'John Updated' and email 'john.updated@example.com'
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 1
+2026-06-24 19:35:53 [main] DEBUG c.unibuc.library.service.UserService - Fetching user by id 999
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Creating user 'Alice Admin' with email 'alice.admin@example.com'
+2026-06-24 19:35:53 [main] INFO  c.unibuc.library.service.UserService - Creating user 'John Doe' with email 'john.doe@example.com'
+2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-06-24 19:35:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.

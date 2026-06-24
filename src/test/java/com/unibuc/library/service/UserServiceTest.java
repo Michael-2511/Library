@@ -288,8 +288,8 @@ class UserServiceTest {
     void deleteUser_Success() {
         // Arrange
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(loanRepository.findAll()).thenReturn(Arrays.asList());
-        when(reservationRepository.findAll()).thenReturn(Arrays.asList());
+        when(loanRepository.existsByUserId(1L)).thenReturn(false);
+        when(reservationRepository.existsByUserId(1L)).thenReturn(false);
 
         // Act
         userService.deleteUser(1L);
@@ -301,10 +301,8 @@ class UserServiceTest {
     @Test
     void deleteUser_WithLoans_ThrowsException() {
         // Arrange
-        Loan loan = new Loan();
-        loan.setUser(user);
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(loanRepository.findAll()).thenReturn(Arrays.asList(loan));
+        when(loanRepository.existsByUserId(1L)).thenReturn(true);
 
         // Act & Assert
         ResourceInUseException exception = assertThrows(ResourceInUseException.class,
@@ -317,11 +315,9 @@ class UserServiceTest {
     @Test
     void deleteUser_WithReservations_ThrowsException() {
         // Arrange
-        Reservation reservation = new Reservation();
-        reservation.setUser(user);
         when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-        when(loanRepository.findAll()).thenReturn(Arrays.asList());
-        when(reservationRepository.findAll()).thenReturn(Arrays.asList(reservation));
+        when(loanRepository.existsByUserId(1L)).thenReturn(false);
+        when(reservationRepository.existsByUserId(1L)).thenReturn(true);
 
         // Act & Assert
         ResourceInUseException exception = assertThrows(ResourceInUseException.class,

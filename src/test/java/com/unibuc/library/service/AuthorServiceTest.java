@@ -84,7 +84,7 @@ class AuthorServiceTest {
         author2.setName("Suzanne Collins");
 
         List<Author> authors = Arrays.asList(author, author2);
-        when(authorRepository.findAll()).thenReturn(authors);
+        when(authorRepository.findAllWithBooks()).thenReturn(authors);
 
         // Act
         List<Author> result = authorService.getAllAuthors();
@@ -94,13 +94,13 @@ class AuthorServiceTest {
         assertEquals(2, result.size());
         assertEquals("George R.R. Martin", result.get(0).getName());
         assertEquals("Suzanne Collins", result.get(1).getName());
-        verify(authorRepository).findAll();
+        verify(authorRepository).findAllWithBooks();
     }
 
     @Test
     void getAuthorById_Success() {
         // Arrange
-        when(authorRepository.findById(1L)).thenReturn(Optional.of(author));
+        when(authorRepository.findByIdWithBooks(1L)).thenReturn(Optional.of(author));
 
         // Act
         Author result = authorService.getAuthorById(1L);
@@ -109,20 +109,20 @@ class AuthorServiceTest {
         assertNotNull(result);
         assertEquals(1L, result.getId());
         assertEquals("George R.R. Martin", result.getName());
-        verify(authorRepository).findById(1L);
+        verify(authorRepository).findByIdWithBooks(1L);
     }
 
     @Test
     void getAuthorById_NotFound_ThrowsException() {
         // Arrange
-        when(authorRepository.findById(999L)).thenReturn(Optional.empty());
+        when(authorRepository.findByIdWithBooks(999L)).thenReturn(Optional.empty());
 
         // Act & Assert
         ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class,
                 () -> authorService.getAuthorById(999L));
 
         assertEquals("Author not found with id: 999", exception.getMessage());
-        verify(authorRepository).findById(999L);
+        verify(authorRepository).findByIdWithBooks(999L);
     }
 
     @Test
@@ -131,7 +131,7 @@ class AuthorServiceTest {
         Author updated = new Author();
         updated.setName("George R. R. Martin");
 
-        when(authorRepository.findById(1L)).thenReturn(Optional.of(author));
+        when(authorRepository.findByIdWithBooks(1L)).thenReturn(Optional.of(author));
         when(authorRepository.findByName(updated.getName())).thenReturn(Optional.empty());
         when(authorRepository.save(any(Author.class))).thenReturn(author);
 
@@ -141,7 +141,7 @@ class AuthorServiceTest {
         // Assert
         assertNotNull(result);
         assertEquals("George R. R. Martin", result.getName());
-        verify(authorRepository).findById(1L);
+        verify(authorRepository).findByIdWithBooks(1L);
         verify(authorRepository).save(author);
     }
 
@@ -155,7 +155,7 @@ class AuthorServiceTest {
         otherAuthor.setId(2L);
         otherAuthor.setName("J.K. Rowling");
 
-        when(authorRepository.findById(1L)).thenReturn(Optional.of(author));
+        when(authorRepository.findByIdWithBooks(1L)).thenReturn(Optional.of(author));
         when(authorRepository.findByName(duplicate.getName())).thenReturn(Optional.of(otherAuthor));
 
         // Act & Assert
@@ -169,14 +169,14 @@ class AuthorServiceTest {
     @Test
     void deleteAuthor_Success() {
         // Arrange
-        when(authorRepository.findById(1L)).thenReturn(Optional.of(author));
-        when(bookRepository.findAll()).thenReturn(Arrays.asList());
+        when(authorRepository.findByIdWithBooks(1L)).thenReturn(Optional.of(author));
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(Arrays.asList());
 
         // Act
         authorService.deleteAuthor(1L);
 
         // Assert
-        verify(authorRepository).findById(1L);
+        verify(authorRepository).findByIdWithBooks(1L);
         verify(authorRepository).delete(author);
     }
 
@@ -189,8 +189,8 @@ class AuthorServiceTest {
         authors.add(author);
         book.setAuthors(authors);
 
-        when(authorRepository.findById(1L)).thenReturn(Optional.of(author));
-        when(bookRepository.findAll()).thenReturn(Arrays.asList(book));
+        when(authorRepository.findByIdWithBooks(1L)).thenReturn(Optional.of(author));
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(Arrays.asList(book));
 
         // Act & Assert
         ResourceInUseException exception = assertThrows(ResourceInUseException.class,

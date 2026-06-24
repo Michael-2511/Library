@@ -174,7 +174,7 @@ class CategoryServiceTest {
     void deleteCategory_Success() {
         // Arrange
         when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
-        when(bookRepository.findAll()).thenReturn(Arrays.asList());
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(Arrays.asList());
 
         // Act
         categoryService.deleteCategory(1L);
@@ -192,7 +192,7 @@ class CategoryServiceTest {
         bookInCategory.setCategory(category);
 
         when(categoryRepository.findById(1L)).thenReturn(Optional.of(category));
-        when(bookRepository.findAll()).thenReturn(Arrays.asList(bookInCategory));
+        when(bookRepository.findAllWithAuthorsAndCategory()).thenReturn(Arrays.asList(bookInCategory));
 
         // Act & Assert
         ResourceInUseException exception = assertThrows(ResourceInUseException.class,
