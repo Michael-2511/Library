@@ -436,6 +436,67 @@ REST endpoints under `/rest/`:
 
 ---
 
+## Deployment
+
+### Live Application
+
+**URL:** [http://awbd-library-1.us-east-1.elasticbeanstalk.com/](http://awbd-library-1.us-east-1.elasticbeanstalk.com/)
+
+### Platform: AWS Elastic Beanstalk
+
+The application is deployed on AWS using the following services:
+
+| AWS Service          | Purpose                                      |
+|----------------------|----------------------------------------------|
+| Elastic Beanstalk    | Application hosting (Java 21 platform)       |
+| RDS PostgreSQL       | Managed database (db.t3.micro, free tier)    |
+| S3                   | Artifact storage for deployment packages     |
+| Load Balancer        | Traffic routing to application instances     |
+
+### Deployment Architecture
+
+```
+GitHub (push to main)
+    │
+    ▼
+GitHub Actions (CI/CD)
+    │  ── Run tests
+    │  ── Build JAR
+    │  ── Deploy to AWS
+    ▼
+AWS Elastic Beanstalk
+    │
+    ├── EC2 Instance (Java 21 + nginx)
+    │       └── library-0.0.1-SNAPSHOT.jar
+    │
+    └── RDS PostgreSQL
+            └── library_db (persistent data)
+```
+
+### Environment Variables
+
+The following environment variables are configured in Elastic Beanstalk:
+
+| Variable                    | Description                          |
+|-----------------------------|--------------------------------------|
+| `SPRING_PROFILES_ACTIVE`    | Active Spring profile (`dev`)        |
+| `SPRING_DATASOURCE_URL`     | JDBC connection string to RDS        |
+| `SPRING_DATASOURCE_USERNAME`| Database username                    |
+| `SPRING_DATASOURCE_PASSWORD`| Database password                    |
+| `SERVER_PORT`               | Application port (`5000`)            |
+
+### Continuous Deployment
+
+Deployment is automated via GitHub Actions. On every push to `main`:
+1. Tests run with H2 (test profile)
+2. JaCoCo coverage report is generated
+3. JAR is built with `mvnw package`
+4. JAR is deployed to Elastic Beanstalk using `einaregilsson/beanstalk-deploy`
+
+The environment updates automatically within ~2 minutes of a successful push.
+
+---
+
 ## Contributors
 
-- **Răican Mihai** — Full development (model, CRUD, security, views, testing)
+- **Răican Mihai** — Full development 
